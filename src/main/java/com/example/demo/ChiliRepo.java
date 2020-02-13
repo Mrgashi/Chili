@@ -19,7 +19,21 @@ public class ChiliRepo {
         }
     }
 
-    public Chili getChili(Integer id) {
+    //***GETPAGE FRA BOOKSTORE, henter ut side med korrekt antall elementer***
+    public List<Chili> getChiliSubgroup(int page, int pageSize){
+        int from = Math.max(0,page*pageSize);
+        int to = Math.min(chiliList.size(), (page +1)*pageSize);
+
+        return chiliList.subList(from,to);
+    }
+
+    //Angir ant. sider å paginere over gitt ant. elementer på hver side
+    public int numberOfPages (int pageSize){
+        return (int) Math.ceil((double) chiliList.size() / pageSize);
+    }
+
+    //henter ut chili basert på id
+    public Chili getChiliById(Integer id) {
         for (Chili chili : chiliList) {
             if (chili.getId() == id) {
                 return chili;
@@ -27,9 +41,18 @@ public class ChiliRepo {
         }
         return null;
     }
-     public List<Chili> getPage(){
+
+
+
+    //Henter ut alle chili-elementer
+     public List<Chili> getAllChilis(){
+
         return chiliList;
      }
 
+
+
 }
+
+
 

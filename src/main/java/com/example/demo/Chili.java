@@ -6,6 +6,7 @@ public class Chili {
     private String originOfChili;
     private ColorOfChili colorOfChili;
     private Integer id;
+    private String imageURL; // TODO add to constructor and add image url when creating in Repo
 
     public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id) {
         this.nameOfChili = nameOfChili;
