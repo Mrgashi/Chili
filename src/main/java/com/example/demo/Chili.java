@@ -1,0 +1,48 @@
+package com.example.demo;
+
+public class Chili {
+    private String nameOfChili;
+    private int scovilleOfChili;
+    private String originOfChili;
+    private ColorOfChili colorOfChili;
+    private Integer id;
+
+    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id) {
+        this.nameOfChili = nameOfChili;
+        this.scovilleOfChili = scovilleOfChili;
+        this.originOfChili = originOfChili;
+        this.colorOfChili = colorOfChili;
+        this.id = id;
+    }
+
+    public String getNameOfChili() {
+        return nameOfChili;
+    }
+
+    public int getScovilleOfChili() {
+        return scovilleOfChili;
+    }
+
+    public String getOriginOfChili() {
+        return originOfChili;
+    }
+
+    public ColorOfChili getColorOfChili() {
+        return colorOfChili;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Chili{" +
+                "nameOfChili='" + nameOfChili + '\'' +
+                ", scovilleOfChili=" + scovilleOfChili +
+                ", originOfChili='" + originOfChili + '\'' +
+                ", colorOfChili=" + colorOfChili + '\'' +
+                ", id = " + id +
+                '}';
+    }
+}

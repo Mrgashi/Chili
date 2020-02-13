@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>MainView</title>
+</head>
+<body>
+<h1> All of our amazing chilis! </h1>
+<!--<h2  th:text="${chiliElement.nameOfChili}">-->
+    <ul th:each="chili : ${addAllChilis}">
+        <li th:text=" ${chili.nameOfChili}"></li>
+        <li th:text=" ${chili.getColorOfChili()}"></li>
+        <li th:text=" ${chili.getScovilleOfChili()}"></li>
+    </ul>
+<!--&lt;!&ndash;    <li th:text="${chili.nameOfChili}"></li>&ndash;&gt;-->
+<!--</h2>-->
+
+STUFF ABOUT CHILIS
+</body>
+</html>
