@@ -2,70 +2,47 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link href="../static/mainView.css" rel="stylesheet">
     <title>MainView</title>
 </head>
 <body>
-<h1> All of our amazing chilis! </h1>
-
-
+<h1> All of our amazing chilies! </h1>
 <!--PAGINATION-->
 <div id="pagination">
     <a
             th:if="${currentPage > 0}"
             th:href="'/?page=' + ${currentPage - 1}"
     >Previous</a>
-
     <span th:each="pageNumber : ${#numbers.sequence( 0, (numberOfPages - 1))}">
         <a
                 style="padding: 8px"
                 th:if="${currentPage != pageNumber}"
-                th:text="${pageNumber} + '  '"
+                th:text="${pageNumber + 1} + '  '"
                 th:href="@{/(page=${pageNumber})}"
         >Page + iterating page number</a>
-
         <span
                 style="font-size: large; font-weight: bold; padding: 8px"
                 th:if="${currentPage == pageNumber}"
-                th:text="${pageNumber} + '  '"
+                th:text="${pageNumber + 1} + '  '"
         >Current page number</span>
     </span>
-
     <a
             th:if="${currentPage < numberOfPages - 1}"
             th:href="'/?page=' + ${currentPage + 1}"
     >Next</a>
 </div>
-
-
 <ul>
     <li th:each="chili : ${chiliSubList}">
         <a
-        style="display: flex; margin-top: 32px"
-        th:href="'/?page=' + ${currentPage} + '&id='+${chili.id}">
-        <ul>
-            <li th:text="'Chili: '+ ${chili.nameOfChili}">Chili name</li>
-            <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
-            <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Schouville</li>
-        </ul>
-        <img src="/chili.jpeg" style="height: 200px; width: auto">
+                style="display: flex; margin-top: 32px"
+                th:href="'/?id='+${chili.id}">
+            <ul>
+                <li th:text="'Chili: '+ ${chili.nameOfChili}">Chili name</li>
+                <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
+                <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Schouville</li>
+            </ul>
+            <img src="/chili.jpeg" style="height: 200px; width: auto">
         </a>
     </li>
 </ul>
-
-
-
-<!--<ul th:each="chili : ${chiliSubList}"-->
-<!--    style="display: flex; margin-top: 32px">-->
-<!--    <a th:href="'showChili/'">-->
-<!--        <div style="padding: 8px">-->
-<!--            -->
-<!--        </div>-->
-<!--        -->
-<!--    </a>-->
-<!--</ul>-->
-
-
-STUFF ABOUT CHILIS
 </body>
 </html>

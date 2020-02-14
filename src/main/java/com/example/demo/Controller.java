@@ -37,10 +37,13 @@ public class Controller {
 
 
     @GetMapping(value = "/", params = "id")
-    public String getChiliById(Model model,@RequestParam Integer id, @RequestParam Integer page) {
+    public String getChiliById(Model model, @RequestParam Integer id) {
         Chili newChili = chiliRepo.getChiliById(id);
+        int pageSize = 4;
         model.addAttribute("chiliElement", newChili);
-        model.addAttribute("currentPage", page);
+        model.addAttribute("currentId", id);
+        model.addAttribute("numberOfChilies", chiliRepo.chiliList.size());
+        model.addAttribute("pageSize", pageSize);
         return "chiliDetailView";
     }
 
