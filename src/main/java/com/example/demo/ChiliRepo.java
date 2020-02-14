@@ -42,16 +42,11 @@ public class ChiliRepo {
         return null;
     }
 
-
-
     //Henter ut alle chili-elementer
      public List<Chili> getAllChilis(){
 
         return chiliList;
      }
-
-
-
 }
 
 

@@ -2,7 +2,6 @@ package com.example.demo;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
@@ -17,13 +16,14 @@ public class Controller {
         this.chiliRepo = chiliRepo;
     }
 
+
     @GetMapping("/")
-    public String getBookPage (@RequestParam(required = false) Integer page, Model model, HttpSession session){
+    public String getChiliPage(@RequestParam(defaultValue = "0") Integer page, Model model, HttpSession session) {
         if (page == null || page < 0) {
             page = 0;
         }
 
-        int pageSize = 4;
+            int pageSize = 4;
         List<Chili> sublist = chiliRepo.getChiliSubgroup(page, pageSize);
         model.addAttribute("chiliSubList", sublist);
         model.addAttribute("currentPage", page);
@@ -36,22 +36,18 @@ public class Controller {
     }
 
 
-
-    @GetMapping("/chiliid")
-    public String getBookById(Model model, @RequestParam(required = false, defaultValue = "8") Integer id) {
+    @GetMapping(value = "/", params = "id")
+    public String getChiliById(Model model,@RequestParam Integer id, @RequestParam Integer page) {
         Chili newChili = chiliRepo.getChiliById(id);
-
         model.addAttribute("chiliElement", newChili);
-
-        return "mainView";
+        model.addAttribute("currentPage", page);
+        return "chiliDetailView";
     }
 
-    @GetMapping("/chilis")
-    public String addAllChilis(Model model){
-   //     List<Chili> allChilis = chiliRepo.getAllChilis();
-
-        model.addAttribute("addAllChilis", chiliRepo.chiliList);
-        return "mainView";
-    }
+//    @GetMapping("/catalog")
+//    public String addAllChilis(Model model) {
+//        model.addAttribute("addAllChilis", chiliRepo.chiliList);
+//        return "mainView";
+//    }
 
 }

@@ -41,8 +41,7 @@
     <li th:each="chili : ${chiliSubList}">
         <a
         style="display: flex; margin-top: 32px"
-        th:href="'showChili/' + ${chili.id}"
-        >
+        th:href="'/?page=' + ${currentPage} + '&id='+${chili.id}">
         <ul>
             <li th:text="'Chili: '+ ${chili.nameOfChili}">Chili name</li>
             <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TeamChiliChiliDetails</title>
+</head>
+<body>
+
+<header>Skal ha inn et image field</header>
+​
+​<header>Hei Hei header hente inn image</header>
+<ul>
+    <li th:text="'Name: ' + ${chiliElement.nameOfChili}"></li>
+    <li th:text="'Origin: ' + ${chiliElement.originOfChili}"></li>
+    <li th:text="'Scoville value: ' + ${chiliElement.scovilleOfChili}"></li>
+    <li th:text="'Color: ' + ${chiliElement.colorOfChili}"></li>
+</ul>
+<img src="/chili.jpeg" style="height: 200px; width: auto">
+​
+<a th:href="'/?page=' + ${currentPage}" >Return to catalog</a>
+
+​<footer>Hei hei footer</footer>
+</body>
+</html>

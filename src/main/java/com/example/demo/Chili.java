@@ -14,6 +14,7 @@ public class Chili {
         this.originOfChili = originOfChili;
         this.colorOfChili = colorOfChili;
         this.id = id;
+        /*this.imageURL = "imageURL";*/
     }
 
     public String getNameOfChili() {
