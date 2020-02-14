@@ -9,7 +9,6 @@ public class ChiliProducts extends Chili {
         super(nameOfChili, scovilleOfChili, originOfChili, colorOfChili, id, imageURL);
     }
 
-
     Chili bellPepper = new Chili("Bell Peppers", 0, "Mexico", ColorOfChili.GREEN, 0, "https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Bell-Peppers.jpg");
     Chili bananaPepper = new Chili("Banana Pepper",200, "India", ColorOfChili.YELLOW, 1, "https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Banana-Peppers2.jpg");
     Chili pepperonciniPepper = new Chili("Pepperoncini Peppers", 350, "Italy", ColorOfChili.YELLOW, 2, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Pepperoncini-Peppers1.jpg");
