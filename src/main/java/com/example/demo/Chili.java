@@ -8,12 +8,13 @@ public class Chili {
     private Integer id;
     private String imageURL; // TODO add to constructor and add image url when creating in Repo
 
-    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id) {
+    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id, String imageURL) {
         this.nameOfChili = nameOfChili;
         this.scovilleOfChili = scovilleOfChili;
         this.originOfChili = originOfChili;
         this.colorOfChili = colorOfChili;
         this.id = id;
+        this.imageURL = imageURL;
         /*this.imageURL = "imageURL";*/
     }
 
@@ -37,6 +38,9 @@ public class Chili {
         return id;
     }
 
+    public String getImageURL() { return imageURL; }
+
+
     @Override
     public String toString() {
         return "Chili{" +
@@ -44,7 +48,7 @@ public class Chili {
                 ", scovilleOfChili=" + scovilleOfChili +
                 ", originOfChili='" + originOfChili + '\'' +
                 ", colorOfChili=" + colorOfChili + '\'' +
-                ", id = " + id +
+                ", id = " + id + ", imageURL=" + imageURL +
                 '}';
     }
 }
