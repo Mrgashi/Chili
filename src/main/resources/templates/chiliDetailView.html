@@ -9,7 +9,7 @@
 <header></header>
 <h1 th:text="${chiliElement.nameOfChili}"></h1>
 <br>
-<img src="/chili.jpeg" style="height: 200px; width: auto">
+<img th:src="${chiliElement.imageURL}"  style="height: 200px; width: auto">
 <ul>
     <li th:text="'Origin: ' + ${chiliElement.originOfChili}"></li>
     <li th:text="'Scoville value: ' + ${chiliElement.scovilleOfChili}"></li>

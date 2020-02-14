@@ -40,7 +40,7 @@
                 <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
                 <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Schouville</li>
             </ul>
-            <img src="/chili.jpeg" style="height: 200px; width: auto">
+            <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto">
         </a>
     </li>
 </ul>

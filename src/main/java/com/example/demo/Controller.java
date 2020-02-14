@@ -9,21 +9,21 @@ import java.util.List;
 
 @org.springframework.stereotype.Controller
 public class Controller {
-
+    int pageSize = 5;
     ChiliRepo chiliRepo;
 
     public Controller(ChiliRepo chiliRepo) {
         this.chiliRepo = chiliRepo;
     }
 
-
+//Catalog overview, set up as pages of int pageSize ("Hovedside")
     @GetMapping("/")
     public String getChiliPage(@RequestParam(defaultValue = "0") Integer page, Model model, HttpSession session) {
         if (page == null || page < 0) {
             page = 0;
         }
 
-            int pageSize = 4;
+
         List<Chili> sublist = chiliRepo.getChiliSubgroup(page, pageSize);
         model.addAttribute("chiliSubList", sublist);
         model.addAttribute("currentPage", page);
@@ -35,15 +35,16 @@ public class Controller {
 
     }
 
-
+//"Detailside" for hver chili
     @GetMapping(value = "/", params = "id")
     public String getChiliById(Model model, @RequestParam Integer id) {
         Chili newChili = chiliRepo.getChiliById(id);
-        int pageSize = 4;
+
         model.addAttribute("chiliElement", newChili);
         model.addAttribute("currentId", id);
         model.addAttribute("numberOfChilies", chiliRepo.chiliList.size());
         model.addAttribute("pageSize", pageSize);
+
         return "chiliDetailView";
     }
 

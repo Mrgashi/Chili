@@ -37,7 +37,9 @@ public class Chili {
         return id;
     }
 
-    public String getImageURL() { return imageURL; }
+    public String getImageURL() {
+        return imageURL;
+    }
 
 
     @Override
