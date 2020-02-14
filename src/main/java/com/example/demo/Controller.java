@@ -15,16 +15,16 @@ public class Controller {
         this.chiliRepo = chiliRepo;
     }
 
-    @GetMapping("/")
+    @GetMapping("/details")
     public String home(Model model, @RequestParam(required = false, defaultValue = "1") Integer id) {
         Chili newChili = chiliRepo.getChili(id);
 
         model.addAttribute("chiliElement", newChili);
 
-        return "mainView";
+        return "chiliDetailView";
     }
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String addAllChilis(Model model){
         List<Chili> allChilis = chiliRepo.getPage();
 
