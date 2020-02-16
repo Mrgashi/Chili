@@ -1,6 +1,6 @@
 package com.example.demo;
 
-public class Chili {
+public class Chili implements Comparable <Chili>{
     private String nameOfChili;
     private int scovilleOfChili;
     private String originOfChili;
@@ -8,9 +8,14 @@ public class Chili {
     private Integer id;
     private String imageURL; // TODO add to constructor and add image url when creating in Repo
 
-    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id, String imageURL) {
+    public Chili(String nameOfChili, int scovilleOfChili) {
         this.nameOfChili = nameOfChili;
         this.scovilleOfChili = scovilleOfChili;
+
+    }
+
+    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id, String imageURL) {
+     this (nameOfChili, scovilleOfChili);
         this.originOfChili = originOfChili;
         this.colorOfChili = colorOfChili;
         this.id = id;
@@ -52,4 +57,7 @@ public class Chili {
                 ", id = " + id + ", imageURL=" + imageURL +
                 '}';
     }
+
+    @Override
+    public int compareTo(Chili comparableChili) { return Integer.compare(comparableChili.scovilleOfChili, this.scovilleOfChili);}
 }
