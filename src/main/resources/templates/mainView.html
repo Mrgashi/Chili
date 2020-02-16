@@ -2,17 +2,47 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link href="mainView.css" rel="stylesheet">
     <title>MainView</title>
 </head>
 <body>
-<h1> All of our amazing chilies! </h1>
-<!--PAGINATION-->
-<div id="pagination">
-    <a
-            th:if="${currentPage > 0}"
-            th:href="'/?page=' + ${currentPage - 1}"
-    >Previous</a>
-    <span th:each="pageNumber : ${#numbers.sequence( 0, (numberOfPages - 1))}">
+<header>
+    <span id="header-logo">
+        <a href="">
+        <img src="chili%20logo.png" alt="logo av chili" id="logo">
+        </a>
+    </span>
+
+    <h1 id="header-main-text">Team chili</h1>
+
+</header>
+
+<main id="main">
+    <div id="main-subtitler">
+        <h2>Velkommen til Team Chilli's chille chili-seleskjon.</h2>
+        <h3>Bla deg igjennom våre utvalgte chilier, bli inspirert og chillax.</h3>
+    </div>
+    <div>
+        <ul>
+            <li th:each="chili : ${chiliSubList}">
+                <a th:href="'/?id='+${chili.id}">
+                    <ul>
+                        <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
+                        <li th:text="'Chili: '+ ${chili.nameOfChili}">Chili name</li>
+                        <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
+                        <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Scoville</li>
+                    </ul>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="pagination">
+        <a
+                th:if="${currentPage > 0}"
+                th:href="'/?page=' + ${currentPage - 1}"
+        >Previous</a>
+        <span th:each="pageNumber : ${#numbers.sequence( 0, (numberOfPages - 1))}">
         <a
                 style="padding: 8px"
                 th:if="${currentPage != pageNumber}"
@@ -25,24 +55,25 @@
                 th:text="${pageNumber + 1} + '  '"
         >Current page number</span>
     </span>
-    <a
-            th:if="${currentPage < numberOfPages - 1}"
-            th:href="'/?page=' + ${currentPage + 1}"
-    >Next</a>
-</div>
-<ul>
-    <li th:each="chili : ${chiliSubList}">
         <a
-                style="display: flex; margin-top: 32px"
-                th:href="'/?id='+${chili.id}">
-            <ul>
-                <li th:text="'Chili: '+ ${chili.nameOfChili}">Chili name</li>
-                <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
-                <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Schouville</li>
-            </ul>
-            <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto">
+                th:if="${currentPage < numberOfPages - 1}"
+                th:href="'/?page=' + ${currentPage + 1}"
+        >Next</a>
+    </div>
+</main>
+
+<footer id="footer">
+    <span id="footer-logo">
+        <a href="">
+        <img src="chili%20logo.png" alt="logo av chili" id="logo">
         </a>
-    </li>
-</ul>
+    </span>
+
+    <div id="kontakt-info-footer">
+        <p>Ikke ring oss. vi ringer deg. </p>
+    </div>
+
+    <h1 id="header-main-text">Team chili</h1>
+</footer>
 </body>
 </html>
