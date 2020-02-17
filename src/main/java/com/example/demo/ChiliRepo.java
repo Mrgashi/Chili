@@ -34,7 +34,7 @@ public class ChiliRepo {
         chiliList.add(new Chili("Trinidad Scorpion Butch T Pepper", 1200000, "Trinidad and Tobago", ColorOfChili.RED, 16, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Trinidad-Scorpion-Peppers.jpg"));
         chiliList.add(new Chili("Brain Strain Pepper", 1450000, "USA", ColorOfChili.ORANGE, 17, "https://www.chilipeppermadness.com/wp-content/uploads/2018/07/Brain-Strain-Chili-Pepper1.jpg"));
         chiliList.add(new Chili("Komodo Dragon Pepper", 1700000, "United Kingdom", ColorOfChili.RED, 18, "https://www.chilipeppermadness.com/wp-content/uploads/2017/06/Komodo-Dragon-Peppers.jpg"));
-        chiliList.add(new Chili("Carolina Reaper", 2200000, "USA", ColorOfChili.RED, 19, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Carolina-Reaper-Pepper.jpg"));
+        chiliList.add(new Chili("Carolina Reaper", 2200000, "USA", ColorOfChili.RED, 19, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Carolina-Reaper-Pepper.jpg", "https://www.youtube.com/embe8tfIJ1Z6ojA"));
     }
 
 
