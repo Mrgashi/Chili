@@ -35,6 +35,14 @@ h3 {
 
 }
 
+#content {
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+    font-family: raleway, sans-serif;
+
+}
+
 #tekst {
     display: flex;
     justify-content: center;
@@ -45,6 +53,7 @@ h3 {
     width: 150px;
     height: auto;
 }
+
 
 
 #header-main-text {
@@ -69,13 +78,17 @@ h3 {
 #footer {
     background-color: #659DBD;
     width: 100%;
+
 }
 
 ul {
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width: 20%;
+    font-family: raleway, sans-serif;
 }
 
 
@@ -91,4 +104,5 @@ img {
 #pagination {
     text-align: center;
 }
+
 

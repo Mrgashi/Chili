@@ -1,6 +1,6 @@
 package com.example.demo;
 
-public class Chili implements Comparable <Chili>{
+public class Chili {
     private String nameOfChili;
     private int scovilleOfChili;
     private String originOfChili;
@@ -8,63 +8,37 @@ public class Chili implements Comparable <Chili>{
     private Integer id;
     private String imageURL;
     private String videoURL;
+    private String spicinessLevel;
+
 
     public Chili(String nameOfChili, int scovilleOfChili) {
         this.nameOfChili = nameOfChili;
         this.scovilleOfChili = scovilleOfChili;
     }
 
-    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id, String imageURL) {
+    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id, String imageURL, String videoURL, String spicinessLevel) {
      this (nameOfChili, scovilleOfChili);
         this.originOfChili = originOfChili;
         this.colorOfChili = colorOfChili;
         this.id = id;
         this.imageURL = imageURL;
-    }
-
-    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id, String imageURL, String videoURL) {
-       this(nameOfChili, scovilleOfChili,originOfChili,colorOfChili,id,imageURL);
         this.videoURL = videoURL;
+        this.spicinessLevel = spicinessLevel;
     }
 
-    public String getNameOfChili() {
-        return nameOfChili;
-    }
+    public String getNameOfChili() { return nameOfChili; }
 
-    public int getScovilleOfChili() {
-        return scovilleOfChili;
-    }
+    public int getScovilleOfChili() { return scovilleOfChili; }
 
-    public String getOriginOfChili() {
-        return originOfChili;
-    }
+    public String getOriginOfChili() { return originOfChili; }
 
-    public ColorOfChili getColorOfChili() {
-        return colorOfChili;
-    }
+    public ColorOfChili getColorOfChili() { return colorOfChili; }
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
 
-    public String getImageURL() {
-        return imageURL;
-    }
+    public String getImageURL() { return imageURL; }
 
     public String getVideoURL(){return videoURL;}
 
-
-    @Override
-    public String toString() {
-        return "Chili{" +
-                "nameOfChili='" + nameOfChili + '\'' +
-                ", scovilleOfChili=" + scovilleOfChili +
-                ", originOfChili='" + originOfChili + '\'' +
-                ", colorOfChili=" + colorOfChili + '\'' +
-                ", id = " + id + ", imageURL=" + imageURL +
-                '}';
-    }
-
-    @Override
-    public int compareTo(Chili comparableChili) { return Integer.compare(comparableChili.scovilleOfChili, this.scovilleOfChili);}
+    public String getSpicinessLevel() { return spicinessLevel; }
 }

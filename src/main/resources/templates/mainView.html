@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <link href="mainView.css" rel="stylesheet">
@@ -23,8 +24,7 @@
 
         <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
         <a th:href="'/?id='+${chili.id}">
-            <li th:text="${chili.nameOfChili}" Chili name
-            </li>
+            <li th:text="${chili.nameOfChili}">Chili name</li>
         </a>
 
 
@@ -32,6 +32,14 @@
          <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Scoville</li>-->
 
     </ul>
+
+                    <ul th:each="chili : ${chiliSubList}">
+                        <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
+                        <a th:href="'/?id='+${chili.id}">
+                            <li th:text="${chili.nameOfChili}">Chili name</li>
+                        </a>
+                    </ul>
+
 
 
 </main>
