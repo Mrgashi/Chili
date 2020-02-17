@@ -9,40 +9,43 @@
 <body>
 <header>
 
-        <h1 th:text="${chiliElement.nameOfChili}"></h1>
+    <div id="header-logo">
         <a href="/?page=0">
             <img src="image.png" alt="logo av chili" id="logo">
         </a>
-
+        <h1 th:text="${chiliElement.nameOfChili}"></h1>
     </div>
 
 </header>
 <div id="content">
 
-<br>
-<img th:src="${chiliElement.imageURL}" style="height: 400px; width: auto">
-<ul>
-    <img th:src="${chiliElement.getSpicinessLevel()}" style="height: 25px; width: auto">
-    <li th:text="'Scoville value: ' + ${chiliElement.scovilleOfChili}"></li>
-    <li th:text="'Origin: ' + ${chiliElement.originOfChili}"></li>
-    <li th:text="'Color: ' + ${chiliElement.colorOfChili}"></li>
-</ul>
+    <br>
+    <img th:src="${chiliElement.imageURL}" style="height: 400px; width: auto">
+    <ul>
+        <img th:src="${chiliElement.getSpicinessLevel()}" style="height: 25px; width: auto">
+        <li th:text="'Scoville value: ' + ${chiliElement.scovilleOfChili}"></li>
+        <li th:text="'Origin: ' + ${chiliElement.originOfChili}"></li>
+        <li th:text="'Color: ' + ${chiliElement.colorOfChili}"></li>
+    </ul>
 
-<iframe th:src="${chiliElement.videoURL}" width="520" height="300" controls> video of chilies</iframe>
-​
-<div id="pagination">
-    <a th:if="${currentId > 0}" th:href="'/?id='+${chiliElement.id - 1}"
-    >Previous</a>
+    <iframe th:src="${chiliElement.videoURL}"> video of chilies</iframe>
     ​
+    <div id="pagination">
+        <a th:if="${currentId > 0}" th:href="'/?id='+${chiliElement.id - 1}"
+        >Previous</a>
+
+        <a th:href="'/?page=' + ${currentId / pageSize}">Return to catalog</a>
+
+        <a th:if="${currentId < numberOfChilies - 1}" th:href="'/?id='+${chiliElement.id + 1}">Next</a>
+
+    </div>
     ​
-    <a th:if="${currentId < numberOfChilies - 1}" th:href="'/?id='+${chiliElement.id + 1}">Next</a>
+
+    ​
 </div>
-​
-<a th:href="'/?page=' + ${currentId / pageSize}">Return to catalog</a>
-​</div>
 <footer id="footer">
     <ul>
-        <li>Team Chill.i © </li>
+        <li>Team Chill.i ©</li>
         <li>Jola, Robin, Karoline og Mirdon</li>
         <li>Let’s taste the future ™</li>
         <li>Nydalsveien 33<br/>0484 Oslo</li>
