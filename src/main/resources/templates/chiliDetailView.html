@@ -24,7 +24,7 @@
     <a th:if="${currentId < numberOfChilies - 1}" th:href="'/?id='+${chiliElement.id + 1}">Next</a>
 </div>
 ​
-<a th:href="'/?page=' + ${numberOfChilies / pageSize - 1}">Return to catalog</a>
+<a th:href="'/?page=' + ${currentId / pageSize}">Return to catalog</a>
 ​
 <footer></footer>
 </body>

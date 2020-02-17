@@ -6,21 +6,22 @@
 body {
     padding: 0;
     margin: 0;
-    /*background-color: #FBEEC1;*/
+    background-color: #FBEEC1;
     font-family: raleway, sans-serif;
 
 }
-
 h1 {
-    color: #F2780C;
     text-align: center;
-    background-image: url("https://files.slack.com/files-pri/TPXG1S5FG-FTP43R61H/chili_logo.png");
-    background-repeat: no-repeat;
-    background-size: 80px;
-    background-attachment: scroll;
-    padding: 28px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 40px;
+}
 
-
+header {
+    height: 182px;
+    background-color: #659DBD;
+    width: 100%;
+    display: inline-block;
 }
 
 h3 {
@@ -37,16 +38,11 @@ h3 {
     display: flex;
     justify-content: center;
 }
-header {
-    height: 80px;
-    background-color: #F1FF73;
-}
 
 #logo {
     display: inline-block;
     width: 150px;
     height: auto;
-    border-radius: 50%;
 }
 
 
@@ -73,17 +69,26 @@ header {
 }
 
 #footer {
-    background-color: #F1FF73;
+    background-color: #659DBD;
+    width: 100%;
 }
 
 img {
     border-radius: 30px;
-
 }
 
 ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+#kontakt-info-footer p{
+    margin: 0;
+    text-align: center;
+}
+
+#pagination {
+    text-align: center;
 }
 

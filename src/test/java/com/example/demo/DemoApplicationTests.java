@@ -1,20 +1,14 @@
 package com.example.demo;
 
-import org.junit.Before;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class DemoApplicationTests {
 
-    private ChiliRepo chiliRepo;
-
-    @Before
-    public void setup() { chiliRepo = new ChiliRepo(); }
 
     @Test
     public void compareScoville() {

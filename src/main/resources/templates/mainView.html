@@ -7,32 +7,38 @@
 </head>
 <body>
 <header>
-    <span id="header-logo">
+    <div id="header-logo">
+    <h1>Team chilli</h1>
         <a href="">
-        <img src="chili%20logo.png" alt="logo av chili" id="logo">
+        <img src="image.png" alt="logo av chili" id="logo">
         </a>
-    </span>
 
-    <h1 id="header-main-text">Team chili</h1>
+    </div>
 
 </header>
 
 <main id="main">
-    <div id="main-subtitler">
+    <!--<div id="main-subtitler">
         <h2>Velkommen til Team Chilli's chille chili-seleskjon.</h2>
         <h3>Bla deg igjennom våre utvalgte chilier, bli inspirert og chillax.</h3>
-    </div>
+    </div>-->
     <div>
         <ul>
             <li th:each="chili : ${chiliSubList}">
-                <a th:href="'/?id='+${chili.id}">
+
                     <ul>
+
                         <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
-                        <li th:text="'Chili: '+ ${chili.nameOfChili}">Chili name</li>
-                        <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
-                        <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Scoville</li>
+                        <a th:href="'/?id='+${chili.id}">
+                            <li th:text="${chili.nameOfChili}" Chili name</li>
+                        </a>
+
+
+                        <!-- <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
+                         <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Scoville</li>-->
+
+
                     </ul>
-                </a>
             </li>
         </ul>
     </div>
@@ -65,15 +71,12 @@
 <footer id="footer">
     <span id="footer-logo">
         <a href="">
-        <img src="chili%20logo.png" alt="logo av chili" id="logo">
+        <img src="image.png" alt="logo av chili" id="logo">
         </a>
-    </span>
-
-    <div id="kontakt-info-footer">
+        <div id="kontakt-info-footer">
         <p>Ikke ring oss. vi ringer deg. </p>
     </div>
-
-    <h1 id="header-main-text">Team chili</h1>
+    </span>
 </footer>
 </body>
 </html>
