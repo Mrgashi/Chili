@@ -3,14 +3,24 @@
 <link href="mainView.css" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
+    <link href="chiliDetailView.css" rel="stylesheet">
+
     <title>TeamChiliChiliDetails</title>
 </head>
 <body>
-​
-<header></header>
+<header>
+    <div id="header-logo">
+        <h1 th:text="${chiliElement.nameOfChili}"</h1>
+        <a href="">
+            <img src="image.png" alt="logo av chili" id="logo">
+        </a>
+
+    </div>
+
+</header>
 <h1 th:text="${chiliElement.nameOfChili}"></h1>
 <br>
-<img th:src="${chiliElement.imageURL}"  style="height: 200px; width: auto">
+<img th:src="${chiliElement.imageURL}" style="height: 200px; width: auto">
 <ul>
     <li th:text="'Origin: ' + ${chiliElement.originOfChili}"></li>
     <li th:text="'Scoville value: ' + ${chiliElement.scovilleOfChili}"></li>
@@ -27,7 +37,7 @@
     <a th:if="${currentId < numberOfChilies - 1}" th:href="'/?id='+${chiliElement.id + 1}">Next</a>
 </div>
 ​
-<a th:href="'/?page=' + ${numberOfChilies / pageSize - 1}">Return to catalog</a>
+<a th:href="'/?page=' + ${currentId / pageSize}">Return to catalog</a>
 ​
 <footer></footer>
 </body>

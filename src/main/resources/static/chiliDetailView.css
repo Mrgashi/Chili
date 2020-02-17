@@ -10,6 +10,7 @@ body {
     font-family: raleway, sans-serif;
 
 }
+
 h1 {
     text-align: center;
     margin-top: 0;
@@ -59,6 +60,7 @@ h3 {
     padding: 20px;
     margin: 10px;
 }
+
 #main {
     padding: 60px 150px;
     flex-wrap: wrap;
@@ -77,12 +79,11 @@ ul {
 }
 
 
-
 img {
     border-radius: 30px;
 }
 
-#kontakt-info-footer p{
+#kontakt-info-footer p {
     margin: 0;
     text-align: center;
 }
