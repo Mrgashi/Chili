@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link href="chiliDetailView.css" rel="stylesheet">
-
     <title>TeamChiliChiliDetails</title>
 </head>
+
 <body>
 <header>
 
@@ -15,10 +15,9 @@
         </a>
         <h1 th:text="${chiliElement.nameOfChili}"></h1>
     </div>
-
 </header>
-<div id="content">
 
+<div id="content">
     <br>
     <img th:src="${chiliElement.imageURL}" style="height: 400px; width: auto">
     <ul>
@@ -27,22 +26,16 @@
         <li th:text="'Origin: ' + ${chiliElement.originOfChili}"></li>
         <li th:text="'Color: ' + ${chiliElement.colorOfChili}"></li>
     </ul>
-
-    <iframe th:src="${chiliElement.videoURL}"> video of chilies</iframe>
+    <iframe th:src="${chiliElement.videoURL}"width="500" height="300" controls> video of chilies</iframe>
     ​
     <div id="pagination">
         <a th:if="${currentId > 0}" th:href="'/?id='+${chiliElement.id - 1}"
         >Previous</a>
-
         <a th:href="'/?page=' + ${currentId / pageSize}">Return to catalog</a>
-
         <a th:if="${currentId < numberOfChilies - 1}" th:href="'/?id='+${chiliElement.id + 1}">Next</a>
-
     </div>
-    ​
-
-    ​
 </div>
+
 <footer id="footer">
     <ul>
         <li>Team Chill.i ©</li>
@@ -53,5 +46,6 @@
         <li>&copy; 2020</p></li>
     </ul>
 </footer>
+
 </body>
 </html>
