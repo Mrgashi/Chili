@@ -44,6 +44,7 @@ public class Controller {
         model.addAttribute("numberOfChilies", chiliRepo.chiliList.size());
         model.addAttribute("pageSize", pageSize);
 
+
         return "chiliDetailView";
     }
 
