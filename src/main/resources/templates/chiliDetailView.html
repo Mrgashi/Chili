@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href="mainView.css" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
+    <link href="chiliDetailView.css" rel="stylesheet">
+
     <title>TeamChiliChiliDetails</title>
 </head>
 <body>
-​
-<header></header>
+<header>
+    <div id="header-logo">
+        <h1 th:text="${chiliElement.nameOfChili}"</h1>
+        <a href="">
+            <img src="image.png" alt="logo av chili" id="logo">
+        </a>
+
+    </div>
+
+</header>
 <h1 th:text="${chiliElement.nameOfChili}"></h1>
 <br>
-<img th:src="${chiliElement.imageURL}"  style="height: 200px; width: auto">
+<img th:src="${chiliElement.imageURL}" style="height: 200px; width: auto">
 <ul>
     <li th:text="'Origin: ' + ${chiliElement.originOfChili}"></li>
     <li th:text="'Scoville value: ' + ${chiliElement.scovilleOfChili}"></li>
