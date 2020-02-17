@@ -50,10 +50,6 @@ h3 {
     display: inline-block;
 }
 
-#main-subtitler {
-    text-align: center;
-    justify-content: center;
-}
 
 #flex-box-main {
     display: flex;
@@ -77,18 +73,13 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    width: 20%;
 }
 
 
 
 img {
     border-radius: 30px;
-}
-
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
 }
 
 #kontakt-info-footer p{

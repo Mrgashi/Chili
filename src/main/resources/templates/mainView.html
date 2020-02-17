@@ -20,12 +20,7 @@
 <main id="main">
         <h3>Bla deg igjennom våre utvalgte chilier, bli inspirert og chillax</h3>
     </div>
-
-    <div>
-        <ul>
-            <li th:each="chili : ${chiliSubList}">
-
-                    <ul>
+                    <ul th:each="chili : ${chiliSubList}">
 
                         <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
                         <a th:href="'/?id='+${chili.id}">
@@ -36,11 +31,7 @@
                         <!-- <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
                          <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Scoville</li>-->
 
-
                     </ul>
-            </li>
-        </ul>
-    </div>
 
     <div id="pagination">
         <a
@@ -75,12 +66,7 @@
         <div id="kontakt-info-footer">
         <p>Ikke ring oss. vi ringer deg. </p>
     </div>
-<<<<<<< HEAD
     </span>
-=======
-
-
->>>>>>> b8660f910d40cbee618389f29d3eb9784a18c91d
 </footer>
 </body>
 </html>
