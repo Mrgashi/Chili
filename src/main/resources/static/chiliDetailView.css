@@ -49,7 +49,7 @@ h3 {
 }
 
 #logo {
-    display: inline-block;
+    display: inline;
     width: 150px;
     height: auto;
 }
@@ -85,7 +85,12 @@ h3 {
     text-align: center;
     justify-items: center;
     margin: 0;
-    padding-top: 15px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-family: raleway, sans-serif;
+    padding-inline-start: 0px;
+    padding: 10px;
+
 }
 
 
