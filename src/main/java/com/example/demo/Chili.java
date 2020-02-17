@@ -7,11 +7,11 @@ public class Chili implements Comparable <Chili>{
     private ColorOfChili colorOfChili;
     private Integer id;
     private String imageURL; // TODO add to constructor and add image url when creating in Repo
+    private String videoURL;
 
     public Chili(String nameOfChili, int scovilleOfChili) {
         this.nameOfChili = nameOfChili;
         this.scovilleOfChili = scovilleOfChili;
-
     }
 
     public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id, String imageURL) {
@@ -20,6 +20,11 @@ public class Chili implements Comparable <Chili>{
         this.colorOfChili = colorOfChili;
         this.id = id;
         this.imageURL = imageURL;
+    }
+
+    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id, String imageURL, String videoURL) {
+       this(nameOfChili, scovilleOfChili,originOfChili,colorOfChili,id,imageURL);
+        this.videoURL = videoURL;
     }
 
     public String getNameOfChili() {
@@ -45,6 +50,8 @@ public class Chili implements Comparable <Chili>{
     public String getImageURL() {
         return imageURL;
     }
+
+    public String getVideoURL(){return videoURL;}
 
 
     @Override
