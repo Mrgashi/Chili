@@ -7,9 +7,10 @@
     <title>MainView</title>
 </head>
 <body>
+
 <header>
     <div id="header-logo">
-        <h1>Team chilli</h1>
+    <h1>Team chili</h1>
         <a href="/?page=0">
             <img src="image.png" alt="logo av chili" id="logo">
         </a>
@@ -21,28 +22,14 @@
 <main id="main">
 
     <ul th:each="chili : ${chiliSubList}">
-
-        <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
         <a th:href="'/?id='+${chili.id}">
+        <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
             <li th:text="${chili.nameOfChili}">Chili name</li>
         </a>
-
-
-        <!-- <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
-         <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Scoville</li>-->
-
     </ul>
 
-                    <ul th:each="chili : ${chiliSubList}">
-                        <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
-                        <a th:href="'/?id='+${chili.id}">
-                            <li th:text="${chili.nameOfChili}">Chili name</li>
-                        </a>
-                    </ul>
-
-
-
 </main>
+
 
 <div id="pagination">
     <a
@@ -70,7 +57,7 @@
 
 <footer id="footer">
     <ul>
-        <li>Team Chilli © </li>
+        <li>Team Chill.i © </li>
         <li>Jola, Robin, Karoline og Mirdon</li>
         <li>Let’s taste the future ™</li>
         <li>Nydalsveien 33<br/>0484 Oslo</li>

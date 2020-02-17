@@ -1,5 +1,8 @@
-Chili er en side med info ang forskjellige Chilier og deres opprinnelse og scoville scala. 
+Team Chili består av Jola,Robin, Mirdon og Karoline.
 
-I dette prosjektet har vi brukt thymleafe, SpringBoot, java, samt css. 
+I denne oppgaven har vi valgt å bygge opp et nettside med informasjon om ulike typer chili.
+Vi har opprettet en "database" med ulike chili-objekter i et chili-repo. Objekt-informasjonen sendes via et Controller - lag videre til et Thymeleaf- view.
 
-Bygget opp en statisk database som sender info via controller lag, videre til et view. 
+Vårt fokus i denne oppgaven har vært å bygge opp en stabil back-end-løsning med god kommunikasjon mellom de ulike filtypene, samt at ulike objekt-elementer skal kunne vises i enkle maler.
+
+Teknologiene som er benyttet i oppgaven er Thymeleaaf, Spring boot, Java og CSS.
