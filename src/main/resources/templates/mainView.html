@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <link href="mainView.css" rel="stylesheet">
@@ -9,36 +10,32 @@
 <header>
     <div id="header-logo">
     <h1>Team chilli</h1>
-        <a href="">
+        <a href="/?page=0">
         <img src="image.png" alt="logo av chili" id="logo">
         </a>
-
+        <h3>Bla deg igjennom våre utvalgte chilier, bli inspirert og chillax</h3>
     </div>
 
 </header>
 
 <main id="main">
-        <h3>Bla deg igjennom våre utvalgte chilier, bli inspirert og chillax</h3>
-    </div>
-                    <ul th:each="chili : ${chiliSubList}">
 
+                    <ul th:each="chili : ${chiliSubList}">
                         <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
                         <a th:href="'/?id='+${chili.id}">
                             <li th:text="${chili.nameOfChili}" Chili name</li>
                         </a>
-
-
-                        <!-- <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
-                         <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Scoville</li>-->
-
                     </ul>
 
-    <div id="pagination">
-        <a
-                th:if="${currentPage > 0}"
-                th:href="'/?page=' + ${currentPage - 1}"
-        >Previous</a>
-        <span th:each="pageNumber : ${#numbers.sequence( 0, (numberOfPages - 1))}">
+
+</main>
+
+<div id="pagination">
+    <a
+            th:if="${currentPage > 0}"
+            th:href="'/?page=' + ${currentPage - 1}"
+    >Previous</a>
+    <span th:each="pageNumber : ${#numbers.sequence( 0, (numberOfPages - 1))}">
         <a
                 style="padding: 8px"
                 th:if="${currentPage != pageNumber}"
@@ -51,12 +48,11 @@
                 th:text="${pageNumber + 1} + '  '"
         >Current page number</span>
     </span>
-        <a
-                th:if="${currentPage < numberOfPages - 1}"
-                th:href="'/?page=' + ${currentPage + 1}"
-        >Next</a>
-    </div>
-</main>
+    <a
+            th:if="${currentPage < numberOfPages - 1}"
+            th:href="'/?page=' + ${currentPage + 1}"
+    >Next</a>
+</div>
 
 <footer id="footer">
     <span id="footer-logo">

@@ -19,11 +19,17 @@
 </header>
 <div id="content">
 
+<h1>Team chili</h1>
+<a href="">
+    <img src="image.png" alt="logo av chili" id="logo">
+</a>
+
 <br>
 <img th:src="${chiliElement.imageURL}" style="height: 500px; width: auto">
 <ul>
-    <li th:text="'Origin: ' + ${chiliElement.originOfChili}"></li>
+    <img th:src="${chiliElement.getSpicinessLevel()}" style="height: 200px; width: auto">
     <li th:text="'Scoville value: ' + ${chiliElement.scovilleOfChili}"></li>
+    <li th:text="'Origin: ' + ${chiliElement.originOfChili}"></li>
     <li th:text="'Color: ' + ${chiliElement.colorOfChili}"></li>
 </ul>
 
