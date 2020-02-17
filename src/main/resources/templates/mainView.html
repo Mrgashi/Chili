@@ -6,31 +6,43 @@
     <link rel="stylesheet" href="mainView.css">
 </head>
 <body>
-<h1> Welcome to the world of chili's </h1>
-<h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  </h3>
-<!--PAGINATION-->
-<div id="tekst">
-<ul >
-    <li  th:each="chili : ${chiliSubList}">
-        <a
-                style="display: flex; margin-top: 32px"
-                th:href="'/?id='+${chili.id}">
-            <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto">
-            <ul id="mainList" >
-                <li  th:text="'Chili: '+ ${chili.nameOfChili}">Chili name</li>
-                <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
-                <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Scouville</li>
-            </ul>
+<header>
+    <span id="header-logo">
+        <a href="">
+        <img src="chili%20logo.png" alt="logo av chili" id="logo">
         </a>
-    </li>
-</ul>
-</div>
-<div id="pagination">
-    <a
-            th:if="${currentPage > 0}"
-            th:href="'/?page=' + ${currentPage - 1}"
-    >Previous</a>
-    <span th:each="pageNumber : ${#numbers.sequence( 0, (numberOfPages - 1))}">
+    </span>
+
+    <h1 id="header-main-text">Team chili</h1>
+
+</header>
+
+<main id="main">
+    <div id="main-subtitler">
+        <h2>Velkommen til Team Chilli's chille chili-seleskjon.</h2>
+        <h3>Bla deg igjennom våre utvalgte chilier, bli inspirert og chillax.</h3>
+    </div>
+    <div>
+        <ul>
+            <li th:each="chili : ${chiliSubList}">
+                <a th:href="'/?id='+${chili.id}">
+                    <ul>
+                        <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
+                        <li th:text="'Chili: '+ ${chili.nameOfChili}">Chili name</li>
+                        <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
+                        <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Scoville</li>
+                    </ul>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="pagination">
+        <a
+                th:if="${currentPage > 0}"
+                th:href="'/?page=' + ${currentPage - 1}"
+        >Previous</a>
+        <span th:each="pageNumber : ${#numbers.sequence( 0, (numberOfPages - 1))}">
         <a
                 style="padding: 8px"
                 th:if="${currentPage != pageNumber}"
@@ -43,10 +55,25 @@
                 th:text="${pageNumber + 1} + '  '"
         >Current page number</span>
     </span>
-    <a
-            th:if="${currentPage < numberOfPages - 1}"
-            th:href="'/?page=' + ${currentPage + 1}"
-    >Next</a>
-</div>
+        <a
+                th:if="${currentPage < numberOfPages - 1}"
+                th:href="'/?page=' + ${currentPage + 1}"
+        >Next</a>
+    </div>
+</main>
+
+<footer id="footer">
+    <span id="footer-logo">
+        <a href="">
+        <img src="chili%20logo.png" alt="logo av chili" id="logo">
+        </a>
+    </span>
+
+    <div id="kontakt-info-footer">
+        <p>Ikke ring oss. vi ringer deg. </p>
+    </div>
+
+    <h1 id="header-main-text">Team chili</h1>
+</footer>
 </body>
 </html>
