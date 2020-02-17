@@ -76,6 +76,14 @@ header {
     background-color: #F1FF73;
 }
 
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+
 img {
     border-radius: 30px;
 
