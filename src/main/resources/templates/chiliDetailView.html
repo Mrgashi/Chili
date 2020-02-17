@@ -9,7 +9,7 @@
 <body>
 <header>
     <div id="header-logo">
-        <h1 th:text="${chiliElement.nameOfChili}"</h1>
+        <h1 th:text="${chiliElement.nameOfChili}"></h1>
         <a href="">
             <img src="image.png" alt="logo av chili" id="logo">
         </a>
@@ -17,9 +17,10 @@
     </div>
 
 </header>
-<h1 th:text="${chiliElement.nameOfChili}"></h1>
+<div id="content">
+
 <br>
-<img th:src="${chiliElement.imageURL}" style="height: 200px; width: auto">
+<img th:src="${chiliElement.imageURL}" style="height: 500px; width: auto">
 <ul>
     <li th:text="'Origin: ' + ${chiliElement.originOfChili}"></li>
     <li th:text="'Scoville value: ' + ${chiliElement.scovilleOfChili}"></li>
@@ -37,7 +38,16 @@
 </div>
 ​
 <a th:href="'/?page=' + ${currentId / pageSize}">Return to catalog</a>
-​
-<footer></footer>
+​</div>
+<footer id="footer">
+    <span id="footer-logo">
+        <a href="">
+        <img src="image.png" alt="logo av chili" id="logo">
+        </a>
+        <div id="kontakt-info-footer">
+        <p>Ikke ring oss. vi ringer deg. </p>
+    </div>
+    </span>
+</footer>
 </body>
 </html>
