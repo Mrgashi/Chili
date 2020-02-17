@@ -8,7 +8,7 @@
 <body>
 <header>
     <div id="header-logo">
-    <h1>Team chili</h1>
+    <h1>Team chilli</h1>
         <a href="/?page=0">
         <img src="image.png" alt="logo av chili" id="logo">
         </a>
@@ -22,7 +22,7 @@
                     <ul th:each="chili : ${chiliSubList}">
                         <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
                         <a th:href="'/?id='+${chili.id}">
-                            <li th:text="${chili.nameOfChili}" Chili name></li>
+                            <li th:text="${chili.nameOfChili}" Chili name</li>
                         </a>
                     </ul>
 
@@ -56,7 +56,7 @@
 <footer id="footer">
     <span id="footer-logo">
         <a href="">
-        <img src="image.png" alt="logo av chili">
+        <img src="image.png" alt="logo av chili" id="logo">
         </a>
         <div id="kontakt-info-footer">
         <p>Ikke ring oss. vi ringer deg. </p>
