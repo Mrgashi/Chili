@@ -3,6 +3,7 @@ package com.example.demo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -60,11 +61,6 @@ public class ChiliRepo {
         return null;
     }
 
-  /*  //Henter ut alle chili-elementer
-    public List<Chili> getAllChilis() {
-
-        return chiliList;
-    }*/
 }
 
 
