@@ -23,12 +23,11 @@ public class Controller {
             page = 0;
         }
 
-
         List<Chili> sublist = chiliRepo.getChiliSubgroup(page, pageSize);
+
         model.addAttribute("chiliSubList", sublist);
         model.addAttribute("currentPage", page);
         model.addAttribute("numberOfPages", chiliRepo.numberOfPages(pageSize));
-
         session.setAttribute("currentPage", page);
 
         return "mainView";
