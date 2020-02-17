@@ -6,7 +6,7 @@ public class Chili implements Comparable <Chili>{
     private String originOfChili;
     private ColorOfChili colorOfChili;
     private Integer id;
-    private String imageURL; // TODO add to constructor and add image url when creating in Repo
+    private String imageURL;
     private String videoURL;
 
     public Chili(String nameOfChili, int scovilleOfChili) {

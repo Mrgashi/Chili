@@ -48,15 +48,6 @@ public class Controller {
         return "chiliDetailView";
     }
 
-    @GetMapping("/Testarea")
-    public String test() {
-        return "Testarea";
-    }
 
-//    @GetMapping("/catalog")
-//    public String addAllChilis(Model model) {
-//        model.addAttribute("addAllChilis", chiliRepo.chiliList);
-//        return "mainView";
-//    }
 
 }
