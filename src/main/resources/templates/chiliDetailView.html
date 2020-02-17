@@ -16,6 +16,7 @@
     <li th:text="'Color: ' + ${chiliElement.colorOfChili}"></li>
 </ul>
 
+<iframe th:src="${chiliElement.videoURL}"> video of chilis</iframe>
 ​
 <div id="pagination">
     <a th:if="${currentId > 0}" th:href="'/?id='+${chiliElement.id - 1}"

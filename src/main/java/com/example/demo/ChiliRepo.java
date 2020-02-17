@@ -15,7 +15,7 @@ public class ChiliRepo {
     public ChiliRepo() {
         chiliList = new ArrayList<>();
 
-        chiliList.add(new Chili("Bell Peppers", 0, "Mexico", ColorOfChili.GREEN, 0, "https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Bell-Peppers.jpg"));
+        chiliList.add(new Chili("Bell Peppers", 0, "Mexico", ColorOfChili.GREEN, 0, "https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Bell-Peppers.jpg", "https://www.youtube.com/embed/Mr6i4s5bSAU"));
         chiliList.add(new Chili("Banana Pepper", 200, "India", ColorOfChili.YELLOW, 1, "https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Banana-Peppers2.jpg"));
         chiliList.add(new Chili("Pepperoncini Peppers", 350, "Italy", ColorOfChili.YELLOW, 2, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Pepperoncini-Peppers1.jpg"));
         chiliList.add(new Chili("Ananheim Peppers", 600, "USA", ColorOfChili.GREEN, 3, "https://www.chilipeppermadness.com/wp-content/uploads/2019/05/Anaheim-Peppers.jpg"));
@@ -26,15 +26,15 @@ public class ChiliRepo {
         chiliList.add(new Chili("Serrano Pepper", 12000, "Spain", ColorOfChili.GREEN, 8, "https://www.chilipeppermadness.com/wp-content/uploads/2013/09/Serrano-Peppers1.jpg"));
         chiliList.add(new Chili("Cayenne Pepper", 30000, "Brazil", ColorOfChili.RED, 9, "https://www.chilipeppermadness.com/wp-content/uploads/2013/10/Carolina-Cayenne.jpg"));
         chiliList.add(new Chili("ChilTepin Pepper", 50000, "USA", ColorOfChili.RED, 10, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Chiltepin-Peppers.jpg"));
-        chiliList.add(new Chili("Thai Pepper", 75000, "Thailand", ColorOfChili.RED, 11, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Thai-Peppers.jpg"));
-        chiliList.add(new Chili("Datil Pepper", 100000, "Chile", ColorOfChili.YELLOW, 12, "https://www.chilipeppermadness.com/wp-content/uploads/2018/10/Datil-Peppers.jpg"));
-        chiliList.add(new Chili("Habanero Pepper", 250000, "Cuba", ColorOfChili.YELLOW, 13, "https://www.chilipeppermadness.com/wp-content/uploads/2013/10/Habanero-Peppers1.jpg"));
-        chiliList.add(new Chili("Scotch Bonnet Chili Pepper", 350000, "Bahamas", ColorOfChili.ORANGE, 14, "https://www.chilipeppermadness.com/wp-content/uploads/2013/10/Scotch-Bonnet-Chili-Peppers2.jpg"));
-        chiliList.add(new Chili("Ghost Pepper(Bhut Jolokia)", 1000000, "India", ColorOfChili.ORANGE, 15, "https://www.chilipeppermadness.com/wp-content/uploads/2018/10/Ghost-Peppers1.jpg"));
-        chiliList.add(new Chili("Trinidad Scorpion Butch T Pepper", 1200000, "Trinidad and Tobago", ColorOfChili.RED, 16, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Trinidad-Scorpion-Peppers.jpg"));
-        chiliList.add(new Chili("Brain Strain Pepper", 1450000, "USA", ColorOfChili.ORANGE, 17, "https://www.chilipeppermadness.com/wp-content/uploads/2018/07/Brain-Strain-Chili-Pepper1.jpg"));
-        chiliList.add(new Chili("Komodo Dragon Pepper", 1700000, "United Kingdom", ColorOfChili.RED, 18, "https://www.chilipeppermadness.com/wp-content/uploads/2017/06/Komodo-Dragon-Peppers.jpg"));
-        chiliList.add(new Chili("Carolina Reaper", 2200000, "USA", ColorOfChili.RED, 19, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Carolina-Reaper-Pepper.jpg", "https://www.youtube.com/embe8tfIJ1Z6ojA"));
+        chiliList.add(new Chili("Thai Pepper", 75000, "Thailand", ColorOfChili.RED, 11, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Thai-Peppers.jpg", "https://www.youtube.com/embed=qnne_5BhePc"));
+        chiliList.add(new Chili("Datil Pepper", 100000, "Chile", ColorOfChili.YELLOW, 12, "https://www.chilipeppermadness.com/wp-content/uploads/2018/10/Datil-Peppers.jpg", "https://www.youtube.com/embed/rsOM1FnLztQ"));
+        chiliList.add(new Chili("Habanero Pepper", 250000, "Cuba", ColorOfChili.YELLOW, 13, "https://www.chilipeppermadness.com/wp-content/uploads/2013/10/Habanero-Peppers1.jpg", "https://www.youtube.com/embed/eFZ47Mui88o"));
+        chiliList.add(new Chili("Scotch Bonnet Chili Pepper", 350000, "Bahamas", ColorOfChili.ORANGE, 14, "https://www.chilipeppermadness.com/wp-content/uploads/2013/10/Scotch-Bonnet-Chili-Peppers2.jpg", "https://www.youtube.com/embed/DorMVUdFxL4"));
+        chiliList.add(new Chili("Ghost Pepper(Bhut Jolokia)", 1000000, "India", ColorOfChili.ORANGE, 15, "https://www.chilipeppermadness.com/wp-content/uploads/2018/10/Ghost-Peppers1.jpg", "https://www.youtube.com/embed/8dFMCf8zi5s"));
+        chiliList.add(new Chili("Trinidad Scorpion Butch T Pepper", 1200000, "Trinidad and Tobago", ColorOfChili.RED, 16, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Trinidad-Scorpion-Peppers.jpg", "https://www.youtube.com/embed/SoatsItBG8Q"));
+        chiliList.add(new Chili("Brain Strain Pepper", 1450000, "USA", ColorOfChili.ORANGE, 17, "https://www.chilipeppermadness.com/wp-content/uploads/2018/07/Brain-Strain-Chili-Pepper1.jpg", "https://www.youtube.com/embed/AW4zTRAAsO8"));
+            chiliList.add(new Chili("Komodo Dragon Pepper", 1700000, "United Kingdom", ColorOfChili.RED, 18, "https://www.chilipeppermadness.com/wp-content/uploads/2017/06/Komodo-Dragon-Peppers.jpg", "https://www.youtube.com/embed/BPSrZYZkKpA&has_verified=1"));
+        chiliList.add(new Chili("Carolina Reaper", 2200000, "USA", ColorOfChili.RED, 19, "https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Carolina-Reaper-Pepper.jpg", "https://www.youtube.com/embed/8tfIJ1Z6ojA"));
     }
 
 
