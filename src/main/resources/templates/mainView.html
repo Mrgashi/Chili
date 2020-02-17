@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>MainView</title>
+    <link rel="stylesheet" href="mainView.css">
 </head>
 <body>
-<h1> All of our amazing chilies! </h1>
+<h1> Welcome to the world of chili's </h1>
+<h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  </h3>
 <!--PAGINATION-->
+<div id="tekst">
+<ul >
+    <li  th:each="chili : ${chiliSubList}">
+        <a
+                style="display: flex; margin-top: 32px"
+                th:href="'/?id='+${chili.id}">
+            <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto">
+            <ul id="mainList" >
+                <li  th:text="'Chili: '+ ${chili.nameOfChili}">Chili name</li>
+                <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
+                <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Scouville</li>
+            </ul>
+        </a>
+    </li>
+</ul>
+</div>
 <div id="pagination">
     <a
             th:if="${currentPage > 0}"
@@ -30,19 +48,5 @@
             th:href="'/?page=' + ${currentPage + 1}"
     >Next</a>
 </div>
-<ul>
-    <li th:each="chili : ${chiliSubList}">
-        <a
-                style="display: flex; margin-top: 32px"
-                th:href="'/?id='+${chili.id}">
-            <ul>
-                <li th:text="'Chili: '+ ${chili.nameOfChili}">Chili name</li>
-                <li th:text="'Color: ' + ${chili.getColorOfChili()}"> Chili color</li>
-                <li th:text="'Scoville:' + ${chili.getScovilleOfChili()}">Schouville</li>
-            </ul>
-            <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto">
-        </a>
-    </li>
-</ul>
 </body>
 </html>
