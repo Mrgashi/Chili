@@ -2,8 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link href="mainView.css" rel="stylesheet">
     <title>MainView</title>
-    <link rel="stylesheet" href="mainView.css">
 </head>
 <body>
 <header>
@@ -18,10 +18,9 @@
 </header>
 
 <main id="main">
-    <!--<div id="main-subtitler">
-        <h2>Velkommen til Team Chilli's chille chili-seleskjon.</h2>
-        <h3>Bla deg igjennom våre utvalgte chilier, bli inspirert og chillax.</h3>
-    </div>-->
+        <h3>Bla deg igjennom våre utvalgte chilier, bli inspirert og chillax</h3>
+    </div>
+
     <div>
         <ul>
             <li th:each="chili : ${chiliSubList}">
@@ -76,7 +75,12 @@
         <div id="kontakt-info-footer">
         <p>Ikke ring oss. vi ringer deg. </p>
     </div>
+<<<<<<< HEAD
     </span>
+=======
+
+
+>>>>>>> b8660f910d40cbee618389f29d3eb9784a18c91d
 </footer>
 </body>
 </html>

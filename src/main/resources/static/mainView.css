@@ -73,6 +73,14 @@ h3 {
     width: 100%;
 }
 
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+
 img {
     border-radius: 30px;
 }
