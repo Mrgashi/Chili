@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <link href="mainView.css" rel="stylesheet">
     <title>MainView</title>
 </head>
+
 <body>
-
 <header>
-    <div id="header-logo">
 
+    <div id="header-logo">
         <a href="/?page=0">
             <img src="image.png" alt="logo av chili" id="logo">
         </a>
         <h1>Team chili</h1>
-        <h3>Bla deg igjennom våre utvalgte chilier, bli inspirert og chillax</h3>
+        <h3>Bla deg gjennom våre utvalgte chilier, bli inspirert og chillax</h3>
     </div>
-
 </header>
 
 <main id="main">
-
     <ul th:each="chili : ${chiliSubList}">
         <a th:href="'/?id='+${chili.id}">
         <img th:src="${chili.getImageURL()}" style="height: 200px; width: auto" alt="Image of chilli">
             <li th:text="${chili.nameOfChili}">Chili name</li>
         </a>
     </ul>
-
 </main>
-
 
 <div id="pagination">
     <a
@@ -66,5 +61,6 @@
         <li>&copy; 2020</p></li>
     </ul>
 </footer>
+
 </body>
 </html>

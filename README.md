@@ -6,3 +6,5 @@ Vi har opprettet en "database" med ulike chili-objekter i et chili-repo. Objekt-
 Vårt fokus i denne oppgaven har vært å bygge opp en stabil back-end-løsning med god kommunikasjon mellom de ulike filtypene, samt at ulike objekt-elementer skal kunne vises i enkle maler.
 
 Teknologiene som er benyttet i oppgaven er Thymeleaaf, Spring boot, Java og CSS.
+
+Programmet kjører fra localhost port 8089.
