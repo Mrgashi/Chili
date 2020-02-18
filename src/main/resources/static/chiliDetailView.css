@@ -90,8 +90,13 @@ h3 {
     flex-wrap: wrap;
     justify-content: space-evenly;
     font-family: raleway, sans-serif;
-    padding-inline-start: 0px;
+    padding-inline-start: 0;
     padding: 10px;
+
+}
+#footer ul li {
+    word-break: break-word;
+    width: auto;
 }
 
 
