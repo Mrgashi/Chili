@@ -1,17 +1,16 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Service
-public class ChiliRepo {
+public class ChiliRepository {
 
     List<Chili> chiliList;
 
-    public ChiliRepo() {
+    public ChiliRepository() {
         chiliList = new ArrayList<>();
 
         chiliList.add(new Chili("Bell Peppers", 0, "Mexico", ColorOfChili.GREEN, 0, "https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Bell-Peppers.jpg", "https://www.youtube.com/embed/Mr6i4s5bSAU", "chili1.png"));
@@ -48,11 +47,18 @@ public class ChiliRepo {
 
     public Chili getChiliById(Integer id) {
         for (Chili chili : chiliList) {
-            if (chili.getId() == id) {
+            if (chili.getId().equals(id)) {
                 return chili;
             }
         }
         return null;
     }
 
+    public void addNewChilies(int numberOfChilies, String nameOfChili, int scovilleOfChili) {
+        for (int i = 0; i < numberOfChilies; i++) {
+            chiliList.add(new Chili(nameOfChili, scovilleOfChili));
+        }
+    }
+
+    public int getSize() { return chiliList.size(); }
 }

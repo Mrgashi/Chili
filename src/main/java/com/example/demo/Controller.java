@@ -10,6 +10,7 @@ import java.util.List;
 @org.springframework.stereotype.Controller
 public class Controller {
     int pageSize = 4;
+
     ChiliRepo chiliRepo;
 
 
