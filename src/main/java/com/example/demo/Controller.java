@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -8,11 +9,13 @@ import java.util.List;
 
 @org.springframework.stereotype.Controller
 public class Controller {
-    int pageSize = 4;
-    ChiliRepository chiliRepository;
 
-    public Controller(ChiliRepository chiliRepository) {
-        this.chiliRepository = chiliRepository;
+    int pageSize = 4;
+    @Autowired
+    private ChiliRepositoryWithDataJPA chiliRepositoryWithDataJPA;
+
+    public Controller(ChiliRepository chiliRepositoryWithDataJPA) {
+        this.chiliRepositoryWithDataJPA = chiliRepositoryWithDataJPA;
     }
 
     @GetMapping("/")
@@ -21,11 +24,11 @@ public class Controller {
             page = 0;
         }
 
-        List<Chili> sublist = chiliRepository.getChiliSubgroup(page, pageSize);
+        List<Chili> sublist = chiliRepositoryWithDataJPA.getChiliSubgroup(page, pageSize);
 
         model.addAttribute("chiliSubList", sublist);
         model.addAttribute("currentPage", page);
-        model.addAttribute("numberOfPages", chiliRepository.numberOfPages(pageSize));
+        model.addAttribute("numberOfPages", chiliRepositoryWithDataJPA.numberOfPages(pageSize));
         session.setAttribute("currentPage", page);
 
         return "mainView";
@@ -34,11 +37,11 @@ public class Controller {
 
     @GetMapping(value = "/", params = "id")
     public String getChiliById(Model model, @RequestParam Integer id) {
-        Chili newChili = chiliRepository.getChiliById(id);
+        Chili newChili = chiliRepositoryWithDataJPA.getChiliById(id);
 
         model.addAttribute("chiliElement", newChili);
         model.addAttribute("currentId", id);
-        model.addAttribute("numberOfChilies", chiliRepository.chiliList.size());
+        model.addAttribute("numberOfChilies", chiliRepositoryWithDataJPA.chiliList.size());
         model.addAttribute("pageSize", pageSize);
 
         return "chiliDetailView";

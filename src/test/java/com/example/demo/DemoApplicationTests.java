@@ -32,7 +32,7 @@ class DemoApplicationTests {
         assertEquals("Carolina Reaper is spicier than Ghost Pepper", MethodsForTest.spicierChili(new Chili("Ghost Pepper", 1000000), new Chili("Carolina Reaper", 2200000)));
     }
 
-    @Test
+/*    @Test
     public void addNewChilies() {
         ChiliRepository chiliRepository = new ChiliRepository();
 
@@ -41,7 +41,7 @@ class DemoApplicationTests {
 
         chiliRepository.addNewChilies(33, "Carolina Reaper", 2_200_000);
         Assert.assertEquals(14, chiliRepository.numberOfPages(pageSize));
-    }
+    }*/
 
     @Test
     public void testDataWithJPA() {
