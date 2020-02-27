@@ -1,18 +1,15 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
+import javax.sql.DataSource;
 import java.util.List;
 
 @org.springframework.stereotype.Controller
 public class Controller {
-
     int pageSize = 4;
-    @Autowired
-    private ChiliRepositoryWithDataJPA chiliRepositoryWithDataJPA;
 
     public Controller(ChiliRepositoryWithDataJPA chiliRepositoryWithDataJPA) {
         this.chiliRepositoryWithDataJPA = chiliRepositoryWithDataJPA;
@@ -24,11 +21,11 @@ public class Controller {
             page = 0;
         }
 
-        List<Chili> sublist = chiliRepositoryWithDataJPA.getChiliSubgroup(page, pageSize);
+        List<Chili> sublist = chiliRepo.getChiliSubgroup(page, pageSize);
 
         model.addAttribute("chiliSubList", sublist);
         model.addAttribute("currentPage", page);
-        model.addAttribute("numberOfPages", chiliRepositoryWithDataJPA.numberOfPages(pageSize));
+        model.addAttribute("numberOfPages", chiliRepo.numberOfPages(pageSize));
         session.setAttribute("currentPage", page);
 
         return "mainView";
@@ -42,6 +39,8 @@ public class Controller {
         model.addAttribute("chiliElement", newChili);
         model.addAttribute("currentId", id);
         model.addAttribute("numberOfChilies", chiliRepositoryWithDataJPA.count());
+        model.addAttribute("chiliElement", newChili);
+        model.addAttribute("currentId", id);
         model.addAttribute("pageSize", pageSize);
 
         return "chiliDetailView";
