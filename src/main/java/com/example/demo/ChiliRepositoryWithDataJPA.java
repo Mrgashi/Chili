@@ -8,5 +8,4 @@ public interface ChiliRepositoryWithDataJPA extends CrudRepository<Chili, Intege
 
     Iterable<Chili> findAll(Sort sort);
 
-hili
 }
