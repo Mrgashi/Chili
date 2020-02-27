@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import org.springframework.data.domain.Pageable;
+
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.CrudRepository;
 
@@ -8,5 +8,4 @@ public interface ChiliRepositoryWithDataJPA extends CrudRepository<Chili, Intege
 
     Iterable<Chili> findAll(Sort sort);
 
-hili
 }

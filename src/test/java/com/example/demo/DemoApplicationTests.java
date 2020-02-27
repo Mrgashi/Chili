@@ -1,6 +1,5 @@
 package com.example.demo;
 
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -8,9 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -18,11 +18,10 @@ class DemoApplicationTests {
     int pageSize = 4;
 
     @Autowired
-    ChiliRepository chiliRepositoryDataWithJPA;
+    DemoService demoService;
 
     @Test
     public void contextLoads() {
-
     }
 
     @Test
@@ -32,7 +31,7 @@ class DemoApplicationTests {
         assertEquals("Carolina Reaper is spicier than Ghost Pepper", MethodsForTest.spicierChili(new Chili("Ghost Pepper", 1000000), new Chili("Carolina Reaper", 2200000)));
     }
 
-/*    @Test
+    @Test
     public void addNewChilies() {
         ChiliRepository chiliRepository = new ChiliRepository();
 
@@ -41,14 +40,15 @@ class DemoApplicationTests {
 
         chiliRepository.addNewChilies(33, "Carolina Reaper", 2_200_000);
         Assert.assertEquals(14, chiliRepository.numberOfPages(pageSize));
-    }*/
+    }
 
     @Test
     public void testDataWithJPA() {
-        List<Chili> chiliList = chiliRepositoryDataWithJPA.getDataWithJPA(nameOfChili);
+        List<Chili> chiliList = demoService.getDataWithJPA(1_000_000);
 
-        Assert.assertEquals("Bell Pepper has a Scoville score of 0.", 0, chiliRepositoryDataWithJPA.getChiliById(0).getScovilleOfChili());
-        Assert.assertEquals("Carolina Reaper is the hottest chili.", "Carolina Reaper", chiliRepositoryDataWithJPA.getChiliById(chiliRepositoryDataWithJPA.getSize() - 1).getNameOfChili());
-        Assert.assertEquals("Chili with nameOfChili Ancho Peppers is green.", "Ancho Peppers", chiliRepositoryDataWithJPA.getChili(5).getColorOfChili());
+        Assert.assertEquals("size of result is 4", 4, chiliList.size());
+        Assert.assertEquals("Bell Pepper has a Scoville score of 0.", 0, chiliList.get(0).getScovilleOfChili());
+        Assert.assertEquals("Carolina Reaper is the hottest chiliList.", "Carolina Reaper", chiliList.get(chiliList.size() - 1).getNameOfChili());
+        Assert.assertEquals("Chili with name Carolina Reaper is red.", "RED", chiliList.get(chiliList.size() - 1).getColorOfChili());
     }
 }
