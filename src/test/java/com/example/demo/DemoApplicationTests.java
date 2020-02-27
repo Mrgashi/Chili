@@ -33,7 +33,7 @@ class DemoApplicationTests {
 
     @Test
     public void addNewChilies() {
-        ChiliRepository chiliRepository = new ChiliRepository();
+        ChiliRepository chiliRepository = new ChiliRepository(null);
 
         chiliRepository.addNewChilies(1, "Bell Pepper", 0);
         Assert.assertEquals(21, chiliRepository.getSize());

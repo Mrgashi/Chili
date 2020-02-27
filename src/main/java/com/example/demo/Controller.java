@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,6 +10,9 @@ import java.util.List;
 @org.springframework.stereotype.Controller
 public class Controller {
     private final int PAGE_SIZE = 4;
+
+    @Autowired
+    private ChiliRepository chiliRepository;
 
     private final ChiliRepositoryWithDataJPA chiliRepositoryWithDataJPA;
 
@@ -23,11 +27,11 @@ public class Controller {
             page = 0;
         }
 
-        List<Chili> sublist = chiliRepositoryWithDataJPA.getChiliSubgroup(page, PAGE_SIZE);
+        List<Chili> sublist = chiliRepository.getChiliSubgroup(page, PAGE_SIZE);
 
         model.addAttribute("chiliSubList", sublist);
         model.addAttribute("currentPage", page);
-        model.addAttribute("numberOfPages", chiliRepo.numberOfPages(PAGE_SIZE));
+        model.addAttribute("numberOfPages", chiliRepository.numberOfPages(PAGE_SIZE));
         session.setAttribute("currentPage", page);
 
         return "mainView";
@@ -37,11 +41,11 @@ public class Controller {
 
     @GetMapping(value = "/", params = "id")
     public String getChiliById(Model model, @RequestParam Integer id) {
-        Chili newChili = chiliRepositoryWithDataJPA.findById(id).get();
+        Chili newChili = chiliRepository.getChiliById(id);
 
         model.addAttribute("chiliElement", newChili);
         model.addAttribute("currentId", id);
-        model.addAttribute("numberOfChilies", chiliRepositoryWithDataJPA.count());
+        model.addAttribute("numberOfChilies", chiliRepository.getSize());
         model.addAttribute("chiliElement", newChili);
         model.addAttribute("currentId", id);
         model.addAttribute("pageSize", PAGE_SIZE);

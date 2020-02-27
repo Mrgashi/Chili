@@ -1,21 +1,26 @@
 package com.example.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Chili {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "chiliID")
     private Integer id;
+    @Column(name = "nameOfChili")
     private String nameOfChili;
+    @Column(name = "scovilleOfChili")
     private int scovilleOfChili;
+    @Column(name = "imageURL")
     private String imageURL;
+    @Column(name = "videoURL")
     private String videoURL;
+    @Column(name = "originOfChili")
     private String originOfChili;
+    @Column(name = "colorOfChili")
     private ColorOfChili colorOfChili;
+    @Column(name = "spicynessLevel")
     private String spicinessLevel;
 
     public Chili() {
