@@ -9,10 +9,10 @@ import java.util.List;
 @org.springframework.stereotype.Controller
 public class Controller {
     int pageSize = 4;
-    ChiliRepo chiliRepo;
+    ChiliRepository chiliRepository;
 
-    public Controller(ChiliRepo chiliRepo) {
-        this.chiliRepo = chiliRepo;
+    public Controller(ChiliRepository chiliRepository) {
+        this.chiliRepository = chiliRepository;
     }
 
     @GetMapping("/")
@@ -21,11 +21,11 @@ public class Controller {
             page = 0;
         }
 
-        List<Chili> sublist = chiliRepo.getChiliSubgroup(page, pageSize);
+        List<Chili> sublist = chiliRepository.getChiliSubgroup(page, pageSize);
 
         model.addAttribute("chiliSubList", sublist);
         model.addAttribute("currentPage", page);
-        model.addAttribute("numberOfPages", chiliRepo.numberOfPages(pageSize));
+        model.addAttribute("numberOfPages", chiliRepository.numberOfPages(pageSize));
         session.setAttribute("currentPage", page);
 
         return "mainView";
@@ -34,11 +34,11 @@ public class Controller {
 
     @GetMapping(value = "/", params = "id")
     public String getChiliById(Model model, @RequestParam Integer id) {
-        Chili newChili = chiliRepo.getChiliById(id);
+        Chili newChili = chiliRepository.getChiliById(id);
 
         model.addAttribute("chiliElement", newChili);
         model.addAttribute("currentId", id);
-        model.addAttribute("numberOfChilies", chiliRepo.chiliList.size());
+        model.addAttribute("numberOfChilies", chiliRepository.chiliList.size());
         model.addAttribute("pageSize", pageSize);
 
         return "chiliDetailView";

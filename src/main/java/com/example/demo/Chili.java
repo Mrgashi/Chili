@@ -1,13 +1,13 @@
 package com.example.demo;
 
 public class Chili {
+    private Integer id;
     private String nameOfChili;
     private int scovilleOfChili;
-    private String originOfChili;
-    private ColorOfChili colorOfChili;
-    private Integer id;
     private String imageURL;
     private String videoURL;
+    private String originOfChili;
+    private ColorOfChili colorOfChili;
     private String spicinessLevel;
 
 
