@@ -1,5 +1,6 @@
 package com.example.demo;
 
+
 public class Chili {
     private String nameOfChili;
     private int scovilleOfChili;
