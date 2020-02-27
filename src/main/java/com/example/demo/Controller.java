@@ -14,7 +14,7 @@ public class Controller {
     @Autowired
     private ChiliRepositoryWithDataJPA chiliRepositoryWithDataJPA;
 
-    public Controller(ChiliRepository chiliRepositoryWithDataJPA) {
+    public Controller(ChiliRepositoryWithDataJPA chiliRepositoryWithDataJPA) {
         this.chiliRepositoryWithDataJPA = chiliRepositoryWithDataJPA;
     }
 
@@ -37,11 +37,11 @@ public class Controller {
 
     @GetMapping(value = "/", params = "id")
     public String getChiliById(Model model, @RequestParam Integer id) {
-        Chili newChili = chiliRepositoryWithDataJPA.getChiliById(id);
+        Chili newChili = chiliRepositoryWithDataJPA.findById(id).get();
 
         model.addAttribute("chiliElement", newChili);
         model.addAttribute("currentId", id);
-        model.addAttribute("numberOfChilies", chiliRepositoryWithDataJPA.chiliList.size());
+        model.addAttribute("numberOfChilies", chiliRepositoryWithDataJPA.count());
         model.addAttribute("pageSize", pageSize);
 
         return "chiliDetailView";
