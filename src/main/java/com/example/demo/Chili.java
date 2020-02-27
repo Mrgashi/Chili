@@ -4,22 +4,30 @@ import javax.persistence.*;
 
 @Entity
 public class Chili {
+    @SuppressWarnings("JpaDataSourceORMInspection")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "chiliID")
     private Integer id;
+    @SuppressWarnings("JpaDataSourceORMInspection")
     @Column(name = "nameOfChili")
     private String nameOfChili;
+    @SuppressWarnings("JpaDataSourceORMInspection")
     @Column(name = "scovilleOfChili")
     private int scovilleOfChili;
+    @SuppressWarnings("JpaDataSourceORMInspection")
     @Column(name = "imageURL")
     private String imageURL;
+    @SuppressWarnings("JpaDataSourceORMInspection")
     @Column(name = "videoURL")
     private String videoURL;
+    @SuppressWarnings("JpaDataSourceORMInspection")
     @Column(name = "originOfChili")
     private String originOfChili;
+    @SuppressWarnings("JpaDataSourceORMInspection")
     @Column(name = "colorOfChili")
-    private ColorOfChili colorOfChili;
+    private String colorOfChili;
+    @SuppressWarnings("JpaDataSourceORMInspection")
     @Column(name = "spicynessLevel")
     private String spicinessLevel;
 
@@ -31,7 +39,7 @@ public class Chili {
         this.scovilleOfChili = scovilleOfChili;
     }
 
-    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, ColorOfChili colorOfChili, Integer id, String imageURL, String videoURL, String spicinessLevel) {
+    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, String colorOfChili, Integer id, String imageURL, String videoURL, String spicinessLevel) {
         this(nameOfChili, scovilleOfChili);
         this.originOfChili = originOfChili;
         this.colorOfChili = colorOfChili;
@@ -73,11 +81,11 @@ public class Chili {
     }
 
 
-    public ColorOfChili getColorOfChili() {
+    public String getColorOfChili() {
         return colorOfChili;
     }
 
-    public void setColorOfChili(ColorOfChili colorOfChili) {
+    public void setColorOfChili(String colorOfChili) {
         this.colorOfChili = colorOfChili;
     }
 

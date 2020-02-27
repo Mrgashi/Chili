@@ -1,10 +1,10 @@
 CREATE TABLE chili(
   chiliID BIGINT AUTO_INCREMENT PRIMARY KEY,
   nameOfChili VARCHAR(255) NOT NULL,
-  scovilleOfChili VARCHAR(255) NOT NULL,
-  originOfChili VARCHAR(255) NOT NULL,
-  colorOfChili ENUM ('RED', 'GREEN', 'YELLOW', 'ORANGE') NOT NULL,
+  scovilleOfChili BIGINT NOT NULL,
   imageURL VARCHAR(255) NOT NULL,
   videoURL VARCHAR(255) NOT NULL,
+  originOfChili VARCHAR(255) NOT NULL,
+  colorOfChili VARCHAR (255) NOT NULL,
   spicynessLevel VARCHAR(255) NOT NULL
 );

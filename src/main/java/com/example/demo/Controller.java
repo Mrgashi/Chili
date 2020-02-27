@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,15 +10,11 @@ import java.util.List;
 public class Controller {
     private final int PAGE_SIZE = 4;
 
-    @Autowired
-    private ChiliRepository chiliRepository;
+    private final ChiliRepository chiliRepository;
 
-    private final ChiliRepositoryWithDataJPA chiliRepositoryWithDataJPA;
-
-    public Controller(ChiliRepositoryWithDataJPA chiliRepositoryWithDataJPA) {
-        this.chiliRepositoryWithDataJPA = chiliRepositoryWithDataJPA;
+    public Controller(ChiliRepository chiliRepository) {
+        this.chiliRepository = chiliRepository;
     }
-
 
     @GetMapping("/")
     public String getChiliPage(@RequestParam(defaultValue = "0") Integer page, Model model, HttpSession session) {
