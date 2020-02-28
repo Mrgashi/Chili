@@ -19,3 +19,6 @@ VALUES ('Bell Peppers', '0', 'Mexico', 'Green','https://www.chilipeppermadness.c
         ('Brain Strain Pepper', '1450000', 'USA', 'ORANGE', 'https://www.chilipeppermadness.com/wp-content/uploads/2018/07/Brain-Strain-Chili-Pepper1.jpg', 'https://www.youtube.com/embed/AW4zTRAAsO8', 'chili9.png'),
         ('Komodo Dragon Pepper', '1700000', 'United Kingdom', 'RED',  'https://www.chilipeppermadness.com/wp-content/uploads/2017/06/Komodo-Dragon-Peppers.jpg', 'https://www.youtube.com/embed/ZIrIG0803qA', 'chili9.png'),
         ('Carolina Reaper', '2200000', 'USA', 'RED',  'https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Carolina-Reaper-Pepper.jpg', 'https://www.youtube.com/embed/8tfIJ1Z6ojA', 'chili10.png');
+
+INSERT INTO    newssubscription(name, email)
+VALUES ('Joey Pepper', 'joey.pepper@crazypeppers.com');

@@ -13,8 +13,6 @@ public class ChiliRepository {
 
     public ChiliRepository(ChiliRepositoryWithDataJPA chiliRepositoryWithDataJPA) {
         chiliList = (List<Chili>) chiliRepositoryWithDataJPA.findAll();
-//        chiliRepositoryWithDataJPA.findById(1).get();
-
     }
 
     public List<Chili> getChiliSubgroup(int page, int pageSize) {
