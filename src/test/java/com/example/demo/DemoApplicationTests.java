@@ -29,8 +29,8 @@ class DemoApplicationTests {
         List<Chili> chiliList = demoService.getDataWithJPA(1_000_000);
 
         Assert.assertEquals("size of result is 4", 4, chiliList.size());
-        Assert.assertEquals("xxxxx has a Scoville score of 1_200_000.", 1_200_000, chiliList.get(0).getScovilleOfChili());
-        Assert.assertEquals("Carolina Reaper is the hottest chiliList.", "Carolina Reaper", chiliList.get(chiliList.size() - 1).getNameOfChili());
-       // Assert.assertEquals("Chili with name Carolina Reaper is red.", "RED", chiliList.get(chiliList.size() - 1).getColorOfChili());
+        Assert.assertEquals("The mildest chili in this subgroup of chilies has a Scoville score of 1_200_000.", 1_200_000, chiliList.get(3).getScovilleOfChili());
+        Assert.assertEquals("Rob will eat the hottest chili in the world. It is CALLEDCarolina Reaper.", "Carolina Reaper", chiliList.get(0).getNameOfChili());
+        Assert.assertEquals("Chili with name Trinidad Scorpion Butch T is red.", "RED", chiliList.get(chiliList.size() - 1).getColorOfChili());
     }
 }
