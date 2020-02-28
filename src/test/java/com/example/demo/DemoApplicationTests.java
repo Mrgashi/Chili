@@ -30,7 +30,7 @@ class DemoApplicationTests {
 
         Assert.assertEquals("size of result is 4", 4, chiliList.size());
         Assert.assertEquals("The mildest chili in this subgroup of chilies has a Scoville score of 1_200_000.", 1_200_000, chiliList.get(3).getScovilleOfChili());
-        Assert.assertEquals("Rob will eat the hottest chili in the world. It is CALLEDCarolina Reaper.", "Carolina Reaper", chiliList.get(0).getNameOfChili());
+        Assert.assertEquals("Rob will eat the hottest chili in the world. It is called Carolina Reaper.", "Carolina Reaper", chiliList.get(0).getNameOfChili());
         Assert.assertEquals("Chili with name Trinidad Scorpion Butch T is red.", "RED", chiliList.get(chiliList.size() - 1).getColorOfChili());
     }
 }
