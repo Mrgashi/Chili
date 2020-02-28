@@ -8,7 +8,7 @@ public class NewsSubscription {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String Email;
+    private String email;
 
 
     public int getId() { return id; }
@@ -19,7 +19,7 @@ public class NewsSubscription {
 
     public void setName(String name) { this.name = name; }
 
-    public String getEmail() { return Email; }
+    public String getEmail() { return email; }
 
-    public void setEmail(String email) { Email = email; }
+    public void setEmail(String email) { email = email; }
 }
