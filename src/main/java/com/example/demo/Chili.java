@@ -7,47 +7,22 @@ public class Chili {
     @SuppressWarnings("JpaDataSourceORMInspection")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "chiliID")
     private Integer id;
     @SuppressWarnings("JpaDataSourceORMInspection")
-    @Column(name = "nameOfChili")
     private String nameOfChili;
     @SuppressWarnings("JpaDataSourceORMInspection")
-    @Column(name = "scovilleOfChili")
     private int scovilleOfChili;
     @SuppressWarnings("JpaDataSourceORMInspection")
-    @Column(name = "imageURL")
     private String imageURL;
     @SuppressWarnings("JpaDataSourceORMInspection")
-    @Column(name = "videoURL")
     private String videoURL;
     @SuppressWarnings("JpaDataSourceORMInspection")
-    @Column(name = "originOfChili")
     private String originOfChili;
     @SuppressWarnings("JpaDataSourceORMInspection")
-    @Column(name = "colorOfChili")
     private String colorOfChili;
     @SuppressWarnings("JpaDataSourceORMInspection")
-    @Column(name = "spicynessLevel")
     private String spicinessLevel;
 
-    public Chili() {
-    }
-
-    public Chili(String nameOfChili, int scovilleOfChili) {
-        this.nameOfChili = nameOfChili;
-        this.scovilleOfChili = scovilleOfChili;
-    }
-
-    public Chili(String nameOfChili, int scovilleOfChili, String originOfChili, String colorOfChili, Integer id, String imageURL, String videoURL, String spicinessLevel) {
-        this(nameOfChili, scovilleOfChili);
-        this.originOfChili = originOfChili;
-        this.colorOfChili = colorOfChili;
-        this.id = id;
-        this.imageURL = imageURL;
-        this.videoURL = videoURL;
-        this.spicinessLevel = spicinessLevel;
-    }
 
     public Integer getId() {
         return id;
@@ -60,6 +35,7 @@ public class Chili {
     public String getNameOfChili() {
         return nameOfChili;
     }
+
     public void setNameOfChili(String nameOfChili) {
         this.nameOfChili = nameOfChili;
     }
@@ -79,7 +55,6 @@ public class Chili {
     public void setOriginOfChili(String originOfChili) {
         this.originOfChili = originOfChili;
     }
-
 
     public String getColorOfChili() {
         return colorOfChili;

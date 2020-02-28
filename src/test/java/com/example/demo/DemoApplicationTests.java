@@ -25,30 +25,12 @@ class DemoApplicationTests {
     }
 
     @Test
-    public void compareScoville() {
-        assertEquals("Habanero is spicier than Bell Pepper", MethodsForTest.spicierChili(new Chili("Bell Pepper", 0), new Chili("Habanero", 250000)));
-        assertEquals("Ancho Pepper is spicier than Banana Pepper", MethodsForTest.spicierChili(new Chili("Ancho Pepper", 1000), new Chili("Banana Pepper", 200)));
-        assertEquals("Carolina Reaper is spicier than Ghost Pepper", MethodsForTest.spicierChili(new Chili("Ghost Pepper", 1000000), new Chili("Carolina Reaper", 2200000)));
-    }
-
-    @Test
-    public void addNewChilies() {
-        ChiliRepository chiliRepository = new ChiliRepository(null);
-
-        chiliRepository.addNewChilies(1, "Bell Pepper", 0);
-        Assert.assertEquals(21, chiliRepository.getSize());
-
-        chiliRepository.addNewChilies(33, "Carolina Reaper", 2_200_000);
-        Assert.assertEquals(14, chiliRepository.numberOfPages(pageSize));
-    }
-
-    @Test
     public void testDataWithJPA() {
         List<Chili> chiliList = demoService.getDataWithJPA(1_000_000);
 
         Assert.assertEquals("size of result is 4", 4, chiliList.size());
         Assert.assertEquals("xxxxx has a Scoville score of 1_200_000.", 1_200_000, chiliList.get(0).getScovilleOfChili());
         Assert.assertEquals("Carolina Reaper is the hottest chiliList.", "Carolina Reaper", chiliList.get(chiliList.size() - 1).getNameOfChili());
-        Assert.assertEquals("Chili with name Carolina Reaper is red.", "RED", chiliList.get(chiliList.size() - 1).getColorOfChili());
+       // Assert.assertEquals("Chili with name Carolina Reaper is red.", "RED", chiliList.get(chiliList.size() - 1).getColorOfChili());
     }
 }

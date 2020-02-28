@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -11,6 +13,8 @@ public class ChiliRepository {
 
     public ChiliRepository(ChiliRepositoryWithDataJPA chiliRepositoryWithDataJPA) {
         chiliList = (List<Chili>) chiliRepositoryWithDataJPA.findAll();
+//        chiliRepositoryWithDataJPA.findById(1).get();
+
     }
 
     public List<Chili> getChiliSubgroup(int page, int pageSize) {
@@ -30,12 +34,6 @@ public class ChiliRepository {
             }
         }
         return null;
-    }
-
-    public void addNewChilies(int numberOfChilies, String nameOfChili, int scovilleOfChili) {
-        for (int i = 0; i < numberOfChilies; i++) {
-            chiliList.add(new Chili(nameOfChili, scovilleOfChili));
-        }
     }
 
     public int getSize() { return chiliList.size(); }

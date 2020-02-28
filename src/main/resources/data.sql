@@ -1,4 +1,4 @@
-INSERT INTO chili (nameOfChili, scovilleOfChili, originOfChili, colorOfChili, imageURL, videoURL, spicynessLevel)
+INSERT INTO chili (name_of_chili, scoville_of_chili, origin_of_chili, color_of_chili, imageurl, videourl, spiciness_level)
 VALUES ('Bell Peppers', '0', 'Mexico', 'Green','https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Bell-Peppers.jpg', 'https://www.youtube.com/embed/Mr6i4s5bSAU', 'chili1.png'),
         ('Banana Pepper', '200', 'India', 'Yellow','https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Banana-Peppers2.jpg', 'https://www.youtube.com/embed/N4kvtt2T_6Y', 'chili1.png'),
         ('Pepperoncini Peppers', '350', 'Italy', 'Yellow', 'https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Pepperoncini-Peppers1.jpg', 'https://www.youtube.com/embed/8iEGTVxA_NE', 'chili1.png'),
@@ -6,7 +6,7 @@ VALUES ('Bell Peppers', '0', 'Mexico', 'Green','https://www.chilipeppermadness.c
         ('Ancho Pepper', '1000', 'Mexico', 'GREEN', 'https://www.chilipeppermadness.com/wp-content/uploads/2013/09/Ancho-Chili-Sauce-Recipe3.jpg', 'https://www.youtube.com/embed/YXt3h1zHHnU', 'chili1.png'),
         ('Hungarian Wax Pepper', '3000', 'Hungary', 'YELLOW', 'https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Hungarian-Wax-Chili-Peppers-HERO.jpg', 'https://www.youtube.com/embed/yEcsZRrtSFU', 'chili1.png'),
         ('Espelette Pepper', '4000', 'France', 'RED', 'https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Espelette-Chili-Peppers.jpg', 'https://www.youtube.com/embed/x0_NBSdMGW4', 'chili1.png'),
-        ('Jalapeno Pepper', '7000', 'Mexic', 'GREEN', 'https://www.chilipeppermadness.com/wp-content/uploads/2018/10/Jalapeno-Peppers1.jpg', 'https://www.youtube.com/embed/8SLbT652IiQ', 'chili2.png'),
+        ('Jalapeno Pepper', '7000', 'Mexico', 'GREEN', 'https://www.chilipeppermadness.com/wp-content/uploads/2018/10/Jalapeno-Peppers1.jpg', 'https://www.youtube.com/embed/8SLbT652IiQ', 'chili2.png'),
         ('Serrano Pepper', '12000', 'Spain', 'GREEN', 'https://www.chilipeppermadness.com/wp-content/uploads/2013/09/Serrano-Peppers1.jpg', 'https://www.youtube.com/embed/BoLuJlsdCtA', 'chili2.png'),
         ('Cayenne Pepper', '30000', 'Brazil', 'RED', 'https://www.chilipeppermadness.com/wp-content/uploads/2013/10/Carolina-Cayenne.jpg', 'https://www.youtube.com/embed/w9Qh_2V2FdQ', 'chili2.png'),
         ('ChilTepin Pepper', '50000', 'USA', 'RED',  'https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Chiltepin-Peppers.jpg', 'https://www.youtube.com/embed/sYKH4DtrBmw', 'chili3.png'),
