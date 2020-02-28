@@ -55,18 +55,18 @@ public class Controller {
 
 
     @PostMapping("/")
-    public String newsLetter(HttpSession httpSession, BindingResult bindingResult, @Valid Email email, Model model){
+    public String newsLetter(HttpSession httpSession, BindingResult bindingResult, @Valid Epost epost, Model model){
         EmailValidator emailValidator = new EmailValidator();
 
-        if( emailValidator.supports(email.getClass())){
-            emailValidator.validate(email, bindingResult);
+        if( emailValidator.supports(epost.getClass())){
+            emailValidator.validate(epost, bindingResult);
         }if(bindingResult.hasErrors()){
             model.addAttribute(("errorPage"), "Validation failed, please enter a valid email");
-            return "errorform";
+            return "mainView";
         }
-        httpSession.setAttribute("email", emailValidator);
+        httpSession.setAttribute("epost", epost);
 
-        return "redirect:";
+        return "mainView";
     }
 
 }

@@ -11,12 +11,12 @@ public class EmailValidator implements Validator {
 
     @Override
     public boolean supports(Class clazz) {
-        return Email.class.equals(clazz);
+        return Epost.class.equals(clazz);
     }
 
     @Override
     public void validate(Object o, Errors errors) {
-        ValidationUtils.rejectIfEmpty(errors, "Email", "Fuck you");
+        ValidationUtils.rejectIfEmpty(errors, "Epost", "Fuck you");
 
 //        Email email = (Email) o;
 //        if (email.getEmailValidation() == null || email.getEmailValidation().equals("")) {
@@ -24,3 +24,6 @@ public class EmailValidator implements Validator {
 //        }
     }
 }
+
+
+
