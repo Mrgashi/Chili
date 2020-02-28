@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//Denne henter ut objekter fra databasen til testen
 @Service
 public class DemoService {
 

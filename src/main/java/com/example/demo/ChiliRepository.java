@@ -1,11 +1,8 @@
 package com.example.demo;
-
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
-
+//Denne brukes for å opprette paginering på begge html-sidene
 @Service
 public class ChiliRepository {
 

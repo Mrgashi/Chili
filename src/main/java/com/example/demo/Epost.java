@@ -1,8 +1,7 @@
 package com.example.demo;
-import javax.persistence.*;
 import javax.validation.constraints.*;
 
-
+//Denne oppretter epost-objekter
 public class Epost {
 
     @Email

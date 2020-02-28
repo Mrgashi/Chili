@@ -60,12 +60,9 @@
         <li><a class="phone" href="#">+47 1234 5678</a><br/><a href="#">Something@something.com</a></li>
         <li>&copy; 2020</p></li>
     </ul>
-    <form action="/saveepost" th:object="${epost}" method="post">
-    <input type="text" placeholder="@mail here for ChiliLetter!"/>
-
-        <p th:if="${#fields.hasErrors('epost')}">Incorrect value in title!</p>
-        Title: <input type="text" th:field="*{epost}"/>
-
+    <form action="/" th:object="${epost}" method="post">
+        <div th:if="${#fields.hasErrors('epostValidation')}"> <h1>FY!!!</h1></div>
+        <input type="text" placeholder="@mail here for ChiliLetter!" name="epostValidation" th:value="*{epostValidation}"/>
         <input type = "submit">
     </form>
 </footer>

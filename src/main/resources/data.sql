@@ -1,3 +1,5 @@
+--!Dette er alle verdiene som ligger i databasen!---
+
 INSERT INTO chili (name_of_chili, scoville_of_chili, origin_of_chili, color_of_chili, imageurl, videourl, spiciness_level)
 VALUES ('Bell Peppers', '0', 'Mexico', 'Green','https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Bell-Peppers.jpg', 'https://www.youtube.com/embed/Mr6i4s5bSAU', 'chili1.png'),
         ('Banana Pepper', '200', 'India', 'Yellow','https://www.chilipeppermadness.com/wp-content/uploads/2019/08/Banana-Peppers2.jpg', 'https://www.youtube.com/embed/N4kvtt2T_6Y', 'chili1.png'),
@@ -20,5 +22,3 @@ VALUES ('Bell Peppers', '0', 'Mexico', 'Green','https://www.chilipeppermadness.c
         ('Komodo Dragon Pepper', '1700000', 'United Kingdom', 'RED',  'https://www.chilipeppermadness.com/wp-content/uploads/2017/06/Komodo-Dragon-Peppers.jpg', 'https://www.youtube.com/embed/ZIrIG0803qA', 'chili9.png'),
         ('Carolina Reaper', '2200000', 'USA', 'RED',  'https://www.chilipeppermadness.com/wp-content/uploads/2019/04/Carolina-Reaper-Pepper.jpg', 'https://www.youtube.com/embed/8tfIJ1Z6ojA', 'chili10.png');
 
-INSERT INTO    newssubscription(name, email)
-VALUES ('Joey Pepper', 'joey.pepper@crazypeppers.com');
