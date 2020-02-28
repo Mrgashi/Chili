@@ -1,9 +1,12 @@
 package com.example.demo;
 
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.List;
 
 @org.springframework.stereotype.Controller
@@ -30,7 +33,6 @@ public class Controller {
         session.setAttribute("currentPage", page);
 
         return "mainView";
-
     }
 
 
@@ -46,6 +48,22 @@ public class Controller {
         model.addAttribute("pageSize", PAGE_SIZE);
 
         return "chiliDetailView";
+    }
+
+
+    @PostMapping("/")
+    public String newsLetter(HttpSession httpSession, BindingResult bindingResult, @Valid Email email, Model model){
+        EmailValidator emailValidator = new EmailValidator();
+
+        if( emailValidator.supports(email.getClass())){
+            emailValidator.validate(email, bindingResult);
+        }if(bindingResult.hasErrors()){
+            model.addAttribute(("errorPage"), "Validation failed, please enter a valid email");
+            return "errorform";
+        }
+        httpSession.setAttribute("email", emailValidator);
+
+        return "redirect:";
     }
 
 }
