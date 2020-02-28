@@ -2,7 +2,10 @@ package com.example.demo;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -12,9 +15,14 @@ public class Controller {
 
     private final ChiliRepository chiliRepository;
 
-    public Controller(ChiliRepository chiliRepository) {
+    private final NewsSubscriptionRepository newsSubscriptionRepository;
+
+    public Controller(ChiliRepository chiliRepository, NewsSubscriptionRepository newsSubscriptionRepository) {
         this.chiliRepository = chiliRepository;
+        this.newsSubscriptionRepository = newsSubscriptionRepository;
     }
+
+
 
     @GetMapping("/")
     public String getChiliPage(@RequestParam(defaultValue = "0") Integer page, Model model, HttpSession session) {
@@ -33,7 +41,6 @@ public class Controller {
 
     }
 
-
     @GetMapping(value = "/", params = "id")
     public String getChiliById(Model model, @RequestParam Integer id) {
         Chili newChili = chiliRepository.getChiliById(id);
@@ -48,4 +55,14 @@ public class Controller {
         return "chiliDetailView";
     }
 
+    @GetMapping("/form")
+    public String addNewsSubscription(@ModelAttribute NewsSubscription newsSubscription) {
+        return "form";
+    }
+
+    @PostMapping("/save")
+    public String getNewsSubscription(@ModelAttribute NewsSubscription newsSubscription) {
+        newsSubscriptionRepository.save(newsSubscription);
+        return "redirect:/";
+    }
 }
